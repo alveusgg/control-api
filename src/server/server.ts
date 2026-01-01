@@ -7,7 +7,6 @@ import * as managers from '@/managers';
 
 interface ServiceConfig {
 	port: number;
-
 	moduleMap: {[key: string]: boolean}
 }
 
@@ -19,7 +18,6 @@ class Server {
 	// private
 	private readonly port: number;
 	private modules: {[key: string]: Module} = {};
-	private managers: {[key: string]: Object} = {}
 
 	constructor(port: number) {
 		this.port = port;
@@ -34,7 +32,7 @@ class Server {
 		await managers.ConfigManager.LoadAllConfigs();
 
 		let allCamConfigs: any[] = managers.ConfigManager.GetAllCameraConfigs()
-		// check if it's not empty
+		// check that it's not empty
 
 		for (const [k, v] of Object.entries(allCamConfigs)) {
 			managers.CameraManager.LoadCamera(v)

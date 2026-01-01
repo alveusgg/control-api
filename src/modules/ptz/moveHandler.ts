@@ -1,11 +1,8 @@
-import { type ClientErrorStatusCode } from 'hono/utils/http-status';
 import { createFactory } from 'hono/factory';
-import { constants as http } from "http2";
 import * as z from "zod"; 
 import * as constants from '@/constants';
 import { makeVAPIXCall, VAPIXURLBuilder } from '@/utils';
 import { type Handler } from '@/modules/module';
-import { CapabilitiesMiddleware } from '@/server/middleware';
 
 const moveAdapter = z.object({ 
 	direction: z.enum([
@@ -16,22 +13,20 @@ const moveAdapter = z.object({
 	]),
 })
 
-function handle(): any {
-	return createFactory<constants.Env>().createHandlers(async (ctx) => {
-		// Error handle
-		let move = moveAdapter.parse(await ctx.req.json());
-		let camera = ctx.get(constants.targetCameraKey)
-
-		let url = VAPIXURLBuilder("ptz", camera.name, {move: move.direction});
-		let response = await makeVAPIXCall(url, camera.login);
-
-		return ctx.text(response as string)
-	})
-}
-
 const MoveHandler: Handler = {
 	adapter: moveAdapter,
-	handle: handle,
+	handle: () => {
+		return createFactory<constants.Env>().createHandlers(async (ctx) => {
+			// Error handle
+			let move = moveAdapter.parse(await ctx.req.json());
+			let camera = ctx.get(constants.targetCameraKey)
+
+			let url = VAPIXURLBuilder("ptz", camera.name, {move: move.direction});
+			let response = await makeVAPIXCall(url, camera.login);
+
+			return ctx.text(response as string)
+		})
+	},
 }
 
 export default MoveHandler;

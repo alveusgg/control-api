@@ -7,24 +7,24 @@ import { CameraMiddleware, CapabilitiesMiddleware } from '@/server/middleware';
 import IrCutFilterHandler from './irCutFilterHandler';
 
 
-const IRModule: Module = {
-	name: "IR",
+const DayNightModule: Module = {
+	name: "DayNight",
 	basePath: "/ir",
 	Initialize: (config): Hono<{ Variables: constants.Variables }> => {
-		const irModule = new Hono<{ Variables: constants.Variables }>();
+		const dayNightModule = new Hono<{ Variables: constants.Variables }>();
 
-		irModule.use(CameraMiddleware);
+		dayNightModule.use(CameraMiddleware);
 
-		irModule.on(
+		dayNightModule.on(
 			"POST",
 			"/filter",
 			CapabilitiesMiddleware("IrCutFilter"),
 			...IrCutFilterHandler.handle()
 		);
 
-    	return irModule;
+    	return dayNightModule;
 	},
 	Shutdown: (): void => {}
 }
 
-export default IRModule;
+export default DayNightModule;

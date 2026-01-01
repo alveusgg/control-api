@@ -11,6 +11,7 @@ interface cameraConfig {
 var CameraManager = {
 	cameras: {} as Record<string, Camera>,
 
+	// Login will be pulled from a .env instead of just being in the JSON
 	LoadCamera(newCamera: cameraConfig): void {
 		this.cameras[newCamera.name] = {
 			name: newCamera.name,

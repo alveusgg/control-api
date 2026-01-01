@@ -4,6 +4,7 @@ import * as constants from '@/constants';
 
 // Module imports
 import PTZModule from './ptz';
+import DayNightModule from './daynight';
 
 export interface Module {
     name: string;
@@ -20,4 +21,5 @@ export interface Handler {
 
 export const modules: Module[] = [
 	PTZModule,
+	DayNightModule,
 ];
