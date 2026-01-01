@@ -4,7 +4,7 @@ import * as constants from '@/constants';
 import { VAPIXManager } from '@/managers';
 import { type Handler } from '@/modules/module';
 
-const IrCutFilterAdapter = z.object({ 
+const IrFilterAdapter = z.object({ 
 	state: z.enum([
 		"on",  
 		"off",    
@@ -12,12 +12,12 @@ const IrCutFilterAdapter = z.object({
 	]),
 })
 
-const IrCutFilterHandler: Handler = {
-	adapter: IrCutFilterAdapter,
+const IrFilterHandler: Handler = {
+	adapter: IrFilterAdapter,
 	handle: () => {
 		return createFactory<constants.Env>().createHandlers(async (ctx) => {
 			// Error handle
-			let irFilter = IrCutFilterAdapter.parse(await ctx.req.json());
+			let irFilter = IrFilterAdapter.parse(await ctx.req.json());
 			let camera = ctx.get(constants.targetCameraKey)
 
 			let url = VAPIXManager.URLBuilder("ptz", camera.name, {ircutfilter: irFilter.state});
@@ -28,4 +28,4 @@ const IrCutFilterHandler: Handler = {
 	},
 }
 
-export default IrCutFilterHandler;
+export default IrFilterHandler;

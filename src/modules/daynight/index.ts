@@ -4,7 +4,7 @@ import * as constants from '@/constants';
 import { CameraMiddleware, CapabilitiesMiddleware } from '@/server/middleware';
 
 // Route imports
-import IrCutFilterHandler from './irCutFilterHandler';
+import IrFilterHandler from './irFilterHandler';
 
 
 const DayNightModule: Module = {
@@ -19,7 +19,7 @@ const DayNightModule: Module = {
 			"POST",
 			"/filter",
 			CapabilitiesMiddleware("IrCutFilter"),
-			...IrCutFilterHandler.handle()
+			...IrFilterHandler.handle()
 		);
 
     	return dayNightModule;
