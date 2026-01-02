@@ -1,6 +1,7 @@
 import 'dotenv/config';
-import Server from '@/server/server';
+
 import { modules } from '@/modules/module';
+import Server from '@/server/server';
 
 async function main(): Promise<void> {
 	let server = new Server(3000);

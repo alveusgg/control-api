@@ -1,5 +1,6 @@
-import type { Camera } from '@/models/camera';
-import * as z from "zod"; 
+import * as z from "zod";
+
+import type { Camera } from '@/models/camera'; 
 
 const usernameKey = "_USERNAME";
 const passwordKey = "_PASSWORD";

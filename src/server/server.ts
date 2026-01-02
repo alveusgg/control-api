@@ -1,8 +1,9 @@
 import { Hono } from 'hono';
 import { serve } from '@hono/node-server';
-import type { Module } from '@/modules/module';
+
 import * as constants from '@/constants';
 import * as managers from '@/managers';
+import type { Module } from '@/modules/module';
 
 
 interface ServiceConfig {

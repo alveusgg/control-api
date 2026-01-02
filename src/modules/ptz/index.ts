@@ -1,10 +1,9 @@
-import type { Module } from '@/modules/module';
 import { Hono } from 'hono';
+
 import * as constants from '@/constants';
+import type { Module } from '@/modules/module';
 import { CameraMiddleware, CapabilitiesMiddleware } from '@/server/middleware';
 
-
-// Route imports
 import MoveHandler from './moveHandler';
 import PanHandler from './panHandler';
 

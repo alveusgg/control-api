@@ -1,10 +1,10 @@
 import { Hono, type Handler as HonoHandler } from 'hono';
-import type { ZodObject } from "zod"; 
+import type { ZodObject } from "zod";
+
 import * as constants from '@/constants';
 
-// Module imports
-import PTZModule from './ptz';
 import DayNightModule from './daynight';
+import PTZModule from './ptz';
 
 export interface Module {
     name: string;

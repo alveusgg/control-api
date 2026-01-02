@@ -1,10 +1,11 @@
 import { createMiddleware } from 'hono/factory';
 import { type ClientErrorStatusCode } from 'hono/utils/http-status';
+import { constants as http } from "http2";
+
+import { ErrorCode } from '@/errors/error_codes';
 import * as constants from '@/constants';
 import type { Camera } from '@/models/camera';
-import { constants as http } from "http2";
 import { APIErrorResponse } from '@/utils';
-import { ErrorCode } from '@/errors/error_codes';
 
 const CapabilitiesMiddleware = (...capabilitiesList: string[]) => {
 	return createMiddleware<constants.Env>(async (ctx, next) => {
