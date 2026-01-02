@@ -12,11 +12,6 @@ interface cameraConfig {
 	capabilities: string[];
 }
 
-const panAdapter = z.object({ 
-	degrees: z.number().min(-180.0)
-	.and(z.number().max(180.0)),
-});
-
 var CameraManager = {
 	cameras: {} as Record<string, Camera>,
 
