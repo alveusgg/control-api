@@ -1,5 +1,4 @@
 import { createMiddleware } from 'hono/factory';
-import { type ClientErrorStatusCode } from 'hono/utils/http-status';
 import { constants as http } from "http2";
 
 import { ErrorCode } from '@/errors/error_codes';
