@@ -8,10 +8,12 @@ interface APIError {
 	details: string;
 }
 
-export function APIErrorResponse(ctx: Context<constants.Env>, status: number, code: number, error: Error): Response {
+export function APIErrorResponse(ctx: Context<constants.Env>, status: number, code: number, error: unknown): Response {
+	let err = error instanceof Error ? error : new Error(String(error));
+
 	let newAPIError: APIError = {
 		code: code,
-		details: error.message
+		details: err.message
 	};
 	
 	ctx.status(status as StatusCode);

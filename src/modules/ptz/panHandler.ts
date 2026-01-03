@@ -24,7 +24,7 @@ const PanHandler: Handler = {
 				return APIErrorResponse(ctx, 
 					http.HTTP_STATUS_BAD_REQUEST, 
 					ErrorCode.InvalidRequestBodyCode, 
-					error as Error
+					error
 				);
 			}
 

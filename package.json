@@ -15,6 +15,7 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.3.0",
     "@types/node": "^20.19.27",
+    "prettier": "3.7.4",
     "tsx": "^4.7.1",
     "typescript": "^5.8.3",
     "vite": "^7.2.6",

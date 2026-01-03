@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 import * as constants from "@/constants";
 
-var ConfigManager = {
+const ConfigManager = {
 	// List functions that pull various configs
 	configs: {} as Record<string, any>,
 

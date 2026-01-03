@@ -1,4 +1,4 @@
-var VAPIXManager = {
+const VAPIXManager = {
 	makeAPICall: async (url: string, authorization: string, method: RequestInit["method"] = "GET", test: boolean = true ): Promise<Response | string> => {
 		if (test) {
 			return url;

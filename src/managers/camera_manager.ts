@@ -12,7 +12,7 @@ interface cameraConfig {
 	capabilities: string[];
 }
 
-var CameraManager = {
+const CameraManager = {
 	cameras: {} as Record<string, Camera>,
 
 	LoadCamera(newCamera: cameraConfig): void {

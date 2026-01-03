@@ -5,6 +5,7 @@
     "strict": true,
     "verbatimModuleSyntax": true,
     "skipLibCheck": true,
+	"erasableSyntaxOnly": true,
     "esModuleInterop": true,
 	"resolveJsonModule": true,
     "types": [
