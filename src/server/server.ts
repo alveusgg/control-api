@@ -34,7 +34,7 @@ class Server {
 
 		let allCamConfigs: any[] = managers.ConfigManager.getAllCameraConfigs();
 		if (allCamConfigs.length == 0) {
-			throw new Error()
+			throw new Error();
 		}
 
 		for (const [k, v] of Object.entries(allCamConfigs)) {

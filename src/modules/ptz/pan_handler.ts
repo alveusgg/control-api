@@ -41,7 +41,7 @@ const PanHandler: Handler = {
 			let url = VAPIXManager.URLBuilder("ptz", camera.name, {
 				pan: pan.degrees,
 			});
-			
+
 			let response;
 			try {
 				response = await VAPIXManager.makeAPICall(url, camera.login);

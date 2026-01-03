@@ -42,6 +42,6 @@ class CameraManager {
 	getCamera(camera: string): Camera | undefined {
 		return this.#cameras[camera];
 	}
-};
+}
 
 export default new CameraManager();

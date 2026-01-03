@@ -24,15 +24,15 @@ class ConfigManager {
 				this.#configs[configName] = obj;
 			}),
 		);
-	};
+	}
 
 	letCameraConfig(camera: string): any {
 		return this.#configs[constants.CameraConfigKey][camera];
-	};
+	}
 
 	getAllCameraConfigs(): any[] {
 		return this.#configs[constants.CameraConfigKey];
-	};
-};
+	}
+}
 
 export default new ConfigManager();

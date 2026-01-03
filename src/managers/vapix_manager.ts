@@ -1,12 +1,11 @@
 class VAPIXManager {
-	constructor() {};
+	constructor() {}
 
-	async makeAPICall (
+	async makeAPICall(
 		url: string,
 		authorization: string,
-		method: RequestInit["method"] = "GET"
+		method: RequestInit["method"] = "GET",
 	): Promise<Response> {
-
 		try {
 			const response = await fetch(url, {
 				method: method,
@@ -15,13 +14,12 @@ class VAPIXManager {
 				},
 			});
 			return response;
-
 		} catch (error) {
 			throw error;
 		}
-	};
+	}
 
-	URLBuilder (api: string, target: string, URLParams: any): string {
+	URLBuilder(api: string, target: string, URLParams: any): string {
 		const params = new URLSearchParams(
 			Object.assign(
 				{
@@ -32,7 +30,7 @@ class VAPIXManager {
 		);
 
 		return `http://${target}/axis-cgi/com/${api}.cgi?${params.toString()}`;
-	};
-};
+	}
+}
 
 export default new VAPIXManager();

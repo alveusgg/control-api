@@ -18,7 +18,7 @@ export function APIErrorResponse(
 
 	let details = err.message;
 	if (err.cause) {
- 		details += `: ${err.cause}`
+		details += `: ${err.cause}`;
 	}
 
 	let newAPIError: APIError = {
@@ -27,6 +27,6 @@ export function APIErrorResponse(
 	};
 
 	ctx.status(status as StatusCode);
-	
+
 	return ctx.json(newAPIError);
 }
