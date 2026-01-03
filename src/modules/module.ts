@@ -1,16 +1,18 @@
-import { Hono, type Handler as HonoHandler } from 'hono';
+import { Hono, type Handler as HonoHandler } from "hono";
 import type { ZodObject } from "zod";
 
-import * as constants from '@/constants';
+import * as constants from "@/constants";
 
-import DayNightModule from './daynight';
-import PTZModule from './ptz';
+import DayNightModule from "./daynight";
+import PTZModule from "./ptz";
 
 export interface Module {
-    name: string;
+	name: string;
 	basePath: string;
-    Initialize: (config: {[index: string]: any}) => Hono<{ Variables: constants.Variables }>;
-    Shutdown: () => void;
+	Initialize: (config: {
+		[index: string]: any;
+	}) => Hono<{ Variables: constants.Variables }>;
+	Shutdown: () => void;
 }
 
 export interface Handler {
@@ -18,8 +20,4 @@ export interface Handler {
 	handle: () => HonoHandler[];
 }
 
-
-export const modules: Module[] = [
-	PTZModule,
-	DayNightModule,
-];
+export const modules: Module[] = [PTZModule, DayNightModule];

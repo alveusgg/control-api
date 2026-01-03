@@ -1,11 +1,10 @@
-import { Hono } from 'hono';
+import { Hono } from "hono";
 
-import * as constants from '@/constants';
-import type { Module } from '@/modules/module';
-import { CameraMiddleware, CapabilitiesMiddleware } from '@/server/middleware';
+import * as constants from "@/constants";
+import type { Module } from "@/modules/module";
+import { CameraMiddleware, CapabilitiesMiddleware } from "@/server/middleware";
 
-import IrFilterHandler from './irFilterHandler';
-
+import IrFilterHandler from "./irFilterHandler";
 
 const DayNightModule: Module = {
 	name: "DayNight",
@@ -19,12 +18,12 @@ const DayNightModule: Module = {
 			"POST",
 			"/filter",
 			CapabilitiesMiddleware("IrCutFilter"),
-			...IrFilterHandler.handle()
+			...IrFilterHandler.handle(),
 		);
 
-    	return dayNightModule;
+		return dayNightModule;
 	},
-	Shutdown: (): void => {}
+	Shutdown: (): void => {},
 };
 
 export default DayNightModule;

@@ -1,12 +1,11 @@
-import { Hono } from 'hono';
+import { Hono } from "hono";
 
-import * as constants from '@/constants';
-import type { Module } from '@/modules/module';
-import { CameraMiddleware, CapabilitiesMiddleware } from '@/server/middleware';
+import * as constants from "@/constants";
+import type { Module } from "@/modules/module";
+import { CameraMiddleware, CapabilitiesMiddleware } from "@/server/middleware";
 
-import MoveHandler from './moveHandler';
-import PanHandler from './panHandler';
-
+import MoveHandler from "./moveHandler";
+import PanHandler from "./panHandler";
 
 const PTZModule: Module = {
 	name: "PTZ",
@@ -15,24 +14,24 @@ const PTZModule: Module = {
 		const ptzModule = new Hono<{ Variables: constants.Variables }>();
 
 		ptzModule.use(CameraMiddleware);
-		
+
 		ptzModule.on(
 			"POST",
 			"/move",
 			CapabilitiesMiddleware("PTZ"),
-			...MoveHandler.handle()
+			...MoveHandler.handle(),
 		);
 
 		ptzModule.on(
 			"POST",
 			"/pan",
 			CapabilitiesMiddleware("PTZ"),
-			...PanHandler.handle()
+			...PanHandler.handle(),
 		);
 
-    	return ptzModule;
+		return ptzModule;
 	},
-	Shutdown: (): void => {}
+	Shutdown: (): void => {},
 };
 
 export default PTZModule;

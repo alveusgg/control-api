@@ -2,9 +2,6 @@
 	"value": {
 		"field": "a field",
 		"another": 10,
-		"list": [
-			"ptz",
-			"ztp"
-		]
+		"list": ["ptz", "ztp"]
 	}
 }

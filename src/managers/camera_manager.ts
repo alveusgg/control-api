@@ -1,10 +1,9 @@
 import * as z from "zod";
 
-import type { Camera } from '@/models/camera'; 
+import type { Camera } from "@/models/camera";
 
 const usernameKey = "_USERNAME";
 const passwordKey = "_PASSWORD";
-
 
 interface cameraConfig {
 	name: string;
@@ -32,13 +31,13 @@ const CameraManager = {
 			name: newCamera.name,
 			address: newCamera.address,
 			login: btoa(`${username}:${password}`),
-			capabilities: new Set(newCamera.capabilities)
+			capabilities: new Set(newCamera.capabilities),
 		};
 	},
 
 	GetCamera(camera: string): Camera | undefined {
 		return this.cameras[camera];
 	},
-}
+};
 
 export default CameraManager;

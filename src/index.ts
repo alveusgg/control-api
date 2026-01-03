@@ -1,7 +1,7 @@
-import 'dotenv/config';
+import "dotenv/config";
 
-import { modules } from '@/modules/module';
-import Server from '@/server/server';
+import { modules } from "@/modules/module";
+import Server from "@/server/server";
 
 async function main(): Promise<void> {
 	let server = new Server(3000);
@@ -12,7 +12,6 @@ async function main(): Promise<void> {
 	modules.forEach((m) => {
 		server.registerModule(m);
 	});
-
 
 	server.startServer();
 }
