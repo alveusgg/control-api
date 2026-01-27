@@ -1,6 +1,16 @@
 {
-	"name": "cams4",
+	"name": "@alveusgg/control-api",
+	"version": "0.1.0",
+	"private": true,
 	"type": "module",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alveusgg/control-api.git"
+	},
+	"bugs": {
+		"url": "https://github.com/alveusgg/control-api/issues"
+	},
 	"scripts": {
 		"dev": "tsx watch src/index.ts",
 		"build": "vite build",
