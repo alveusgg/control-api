@@ -1,7 +1,21 @@
 {
-	"name": "cams4",
+	"name": "@alveusgg/control-api",
+	"version": "0.1.0",
+	"private": true,
 	"type": "module",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alveusgg/control-api.git"
+	},
+	"bugs": {
+		"url": "https://github.com/alveusgg/control-api/issues"
+	},
+	"engines": {
+		"node": ">=22.11.0"
+	},
 	"scripts": {
+		"prepare": "husky",
 		"dev": "tsx watch src/index.ts",
 		"build": "vite build",
 		"start": "node dist/index.js"
@@ -16,6 +30,8 @@
 	"devDependencies": {
 		"@rollup/plugin-typescript": "^12.3.0",
 		"@types/node": "^20.19.27",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7",
 		"prettier": "3.7.4",
 		"tsx": "^4.7.1",
 		"typescript": "^5.8.3",
