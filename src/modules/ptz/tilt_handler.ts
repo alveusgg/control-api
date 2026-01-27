@@ -38,13 +38,13 @@ const TiltHandler: Handler = {
 				);
 			}
 
-			let url = VAPIXManager.URLBuilder("ptz", camera.name, {
+			let url = VAPIXManager.URLBuilder("ptz", camera.address, {
 				tilt: tilt.degrees,
 			});
 
 			let response;
 			try {
-				response = await VAPIXManager.makeAPICall(url, camera.login);
+				response = await VAPIXManager.makeAPICall(url, camera.client);
 			} catch (error) {
 				return APIErrorResponse(
 					ctx,

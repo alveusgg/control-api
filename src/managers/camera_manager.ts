@@ -1,3 +1,4 @@
+import DigestClient from "digest-fetch";
 import * as z from "zod";
 
 import type { Camera } from "@/models/camera";
@@ -34,7 +35,7 @@ class CameraManager {
 		this.#cameras[newCamera.name] = {
 			name: newCamera.name,
 			address: newCamera.address,
-			login: btoa(`${username}:${password}`),
+			client: new DigestClient(username, password),
 			capabilities: new Set(newCamera.capabilities),
 		};
 	}

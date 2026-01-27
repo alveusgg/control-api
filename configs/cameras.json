@@ -1,7 +1,7 @@
 {
 	"pasture": {
-		"name": "pasture",
-		"address": "192.168.1.1",
+		"name": "pushpopoutdoor",
+		"address": "192.168.100.106",
 		"capabilities": ["PTZ", "IrCutFilter"]
 	}
 }

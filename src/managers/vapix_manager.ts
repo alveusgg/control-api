@@ -1,17 +1,16 @@
+import type DigestClient from "digest-fetch";
+
 class VAPIXManager {
 	constructor() {}
 
 	async makeAPICall(
 		url: string,
-		authorization: string,
+		client: DigestClient,
 		method: RequestInit["method"] = "GET",
 	): Promise<Response> {
 		try {
-			const response = await fetch(url, {
+			const response = await client.fetch(url, {
 				method: method,
-				headers: {
-					authorization: "Basic " + authorization,
-				},
 			});
 			return response;
 		} catch (error) {
