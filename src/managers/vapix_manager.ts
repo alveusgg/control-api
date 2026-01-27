@@ -28,7 +28,7 @@ class VAPIXManager {
 			),
 		);
 
-		return `http://${target}/axis-cgi/com/${api}.cgi?${params.toString()}`;
+		return `http://${target}/axis-cgi/${api}.cgi?${params.toString()}`;
 	}
 }
 

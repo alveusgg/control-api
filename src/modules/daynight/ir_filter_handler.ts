@@ -38,7 +38,7 @@ const IrFilterHandler: Handler = {
 				);
 			}
 
-			let url = VAPIXManager.URLBuilder("ptz", camera.address, {
+			let url = VAPIXManager.URLBuilder("com/ptz", camera.address, {
 				ircutfilter: irFilter.state,
 			});
 
