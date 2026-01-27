@@ -4,6 +4,7 @@ import * as constants from "@/constants";
 import type { Module } from "@/modules/module";
 import { CameraMiddleware, CapabilitiesMiddleware } from "@/server/middleware";
 
+import PTZHandler from "./ptz_handler";
 import MoveHandler from "./move_handler";
 import PanHandler from "./pan_handler";
 import TiltHandler from "./tilt_handler";
@@ -16,6 +17,13 @@ const PTZModule: Module = {
 		const ptzModule = new Hono<{ Variables: constants.Variables }>();
 
 		ptzModule.use(CameraMiddleware);
+
+		ptzModule.on(
+			"POST",
+			"",
+			CapabilitiesMiddleware("PTZ"),
+			...PTZHandler.handle(),
+		);
 
 		ptzModule.on(
 			"POST",
