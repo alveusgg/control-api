@@ -3,6 +3,7 @@ import type { ZodObject } from "zod";
 
 import * as constants from "@/constants";
 
+// Import modules
 import DayNightModule from "./daynight";
 import PTZModule from "./ptz";
 
@@ -20,4 +21,5 @@ export interface Handler {
 	handle: () => HonoHandler[];
 }
 
+// Register modules to be loaded here
 export const modules: Module[] = [PTZModule, DayNightModule];
