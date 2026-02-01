@@ -73,6 +73,7 @@ class WebSocketManager {
 	}
 
 	processMessage(camera: Camera, message: RawMessage) {
+		// console.log(message)
 		const topic = mapTopicToFriendlyName(message.topic);
 		if (!topic) {
 			throw new Error("topic does not exist");

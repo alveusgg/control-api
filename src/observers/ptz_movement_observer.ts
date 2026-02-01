@@ -18,6 +18,15 @@ const PTZObserver: Observer = {
 		timestamp: number,
 		data: any,
 	) => {
+		let msg: Message = {
+			camera: camera.name,
+			timestamp: timestamp,
+			event: topic,
+			data: {
+				is_moving: true,
+			},
+		};
+
 		let status = data.is_moving;
 		if (status == 0) {
 			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
@@ -26,15 +35,13 @@ const PTZObserver: Observer = {
 
 			let response = await VAPIXManager.makeAPICall(url, camera.client);
 			let position = formatPosition(await response.text());
-			let msg: Message = {
-				camera: camera.name,
-				timestamp: timestamp,
-				event: topic,
-				data: position,
+			msg.data = {
+				is_moving: false,
+				position,
 			};
-
-			WebSocketManager.sendMessageToClients(msg);
 		}
+
+		WebSocketManager.sendMessageToClients(msg);
 	},
 };
 

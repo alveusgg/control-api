@@ -10,6 +10,7 @@ export const allCameraTopicKey = "all";
 export const topicMap = new Map([
 	["tns1:PTZController/tnsaxis:Move", "ptz"],
 	["tns1:VideoSource/tnsaxis:DayNightVision", "ir"],
+	["tns1:Device/tnsaxis:Monitor/Heartbeat", "heartbeat"],
 ]);
 
 // Hono context variables

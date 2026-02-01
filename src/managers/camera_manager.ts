@@ -75,7 +75,7 @@ async function connectWebsocket(camera: Camera, topics: string[]) {
 		let ws = new WebSocket(wsUrl);
 
 		ws.on("open", () => {
-			console.log("WebSocket connected to camera");
+			console.log("WebSocket connected to", camera.name);
 
 			let subscribeMessage = {
 				apiVersion: "1.0",
@@ -102,7 +102,8 @@ async function connectWebsocket(camera: Camera, topics: string[]) {
 			if (message.method === "events:notify") {
 				WebSocketManager.processMessage(camera, message.params.notification);
 			} else if (message.method === "events:configure") {
-				console.log("Configured websocket:", JSON.stringify(message, null, 2));
+				// Opt in or out of configuration status messages here
+				// console.log("Configured websocket:", JSON.stringify(message, null, 2));
 			} else {
 				console.log("Unexpected Message:", JSON.stringify(message, null, 2));
 			}
