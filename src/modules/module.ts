@@ -6,6 +6,7 @@ import * as constants from "@/constants";
 // Import modules
 import DayNightModule from "./daynight";
 import PTZModule from "./ptz";
+import InfoModule from "./info";
 
 export interface Module {
 	name: string;
@@ -17,9 +18,9 @@ export interface Module {
 }
 
 export interface Handler {
-	adapter: ZodObject;
+	adapter?: ZodObject;
 	handle: () => HonoHandler[];
 }
 
 // Register modules to be loaded here
-export const modules: Module[] = [PTZModule, DayNightModule];
+export const modules: Module[] = [PTZModule, DayNightModule, InfoModule];

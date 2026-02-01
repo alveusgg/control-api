@@ -50,7 +50,7 @@ const PTZHandler: Handler = {
 				);
 			}
 
-			let url = VAPIXManager.URLBuilder("com/ptz", camera.address, {
+			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
 				...(ptz.pan !== undefined && { pan: ptz.pan }),
 				...(ptz.tilt !== undefined && { tilt: ptz.tilt }),
 				...(ptz.zoom !== undefined && { zoom: ptz.zoom }),

@@ -1,6 +1,7 @@
 import type { Context } from "hono";
 import { type StatusCode } from "hono/utils/http-status";
 
+import type { Position } from "@/models";
 import * as constants from "@/constants";
 
 interface APIError {
@@ -29,4 +30,25 @@ export function APIErrorResponse(
 	ctx.status(status as StatusCode);
 
 	return ctx.json(newAPIError);
+}
+
+export function formatPosition(position: string): Position {
+	let o: any = {};
+	position.split("\r\n").forEach((p) => {
+		let j = p.split("=");
+		if (j[0] != "") {
+			o[j[0]] = !Number.isNaN(Number(j[1])) ? Number(j[1]) : j[1];
+		}
+	});
+
+	return o as Position;
+}
+
+export function mapTopicToFriendlyName(topic: string): string | undefined {
+	for (const [key, value] of constants.topicMap) {
+		if (topic.startsWith(key)) {
+			return value;
+		}
+	}
+	return undefined;
 }

@@ -1,33 +1,15 @@
 import { createFactory } from "hono/factory";
-import * as z from "zod";
 import { constants as http } from "http2";
 
 import * as constants from "@/constants";
 import { VAPIXManager } from "@/managers";
 import { type Handler } from "@/modules/module";
-import { APIErrorResponse } from "@/utils";
+import { APIErrorResponse, formatPosition } from "@/utils";
 import { ErrorCode } from "@/errors/error_codes";
 
-const tiltAdapter = z.object({
-	degrees: z.number().min(-180.0).and(z.number().max(180.0)),
-});
-
-const TiltHandler: Handler = {
-	adapter: tiltAdapter,
+const GetInfoHandler: Handler = {
 	handle: () => {
 		return createFactory<constants.Env>().createHandlers(async (ctx) => {
-			let tilt;
-			try {
-				tilt = tiltAdapter.parse(await ctx.req.json());
-			} catch (error) {
-				return APIErrorResponse(
-					ctx,
-					http.HTTP_STATUS_BAD_REQUEST,
-					ErrorCode.InvalidRequestBodyCode,
-					error,
-				);
-			}
-
 			let camera = ctx.get(constants.targetCameraKey);
 			if (!camera) {
 				return APIErrorResponse(
@@ -39,7 +21,7 @@ const TiltHandler: Handler = {
 			}
 
 			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
-				tilt: tilt.degrees,
+				query: "position",
 			});
 
 			let response;
@@ -63,9 +45,10 @@ const TiltHandler: Handler = {
 				);
 			}
 
-			return ctx.text(await response.text());
+			let values = await response.text();
+			return ctx.json(formatPosition(values));
 		});
 	},
 };
 
-export default TiltHandler;
+export default GetInfoHandler;

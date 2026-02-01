@@ -17,11 +17,13 @@ class Server {
 	}>();
 
 	// private
-	readonly #port: number;
+	readonly #serverPort: number;
+	readonly #websocketPort: number;
 	#modules: { [key: string]: Module } = {};
 
-	constructor(port: number) {
-		this.#port = port;
+	constructor(serverPort: number, websocketPort: number) {
+		this.#serverPort = serverPort;
+		this.#websocketPort = websocketPort;
 	}
 
 	registerModule(module: Module) {
@@ -40,13 +42,15 @@ class Server {
 		for (const [k, v] of Object.entries(allCamConfigs)) {
 			managers.CameraManager.loadCamera(v);
 		}
+
+		managers.WebSocketManager.setupWebsocket(this.#websocketPort);
 	}
 
-	startServer() {
+	async startServer() {
 		serve(
 			{
 				fetch: this.app.fetch,
-				port: this.#port,
+				port: this.#serverPort,
 			},
 			(info) => {
 				console.log(`Server is running on http://localhost:${info.port}`);
@@ -56,3 +60,7 @@ class Server {
 }
 
 export default Server;
+
+function sleep(time: any) {
+	return new Promise((resolve) => setTimeout(resolve, time));
+}

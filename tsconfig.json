@@ -17,5 +17,6 @@
 			"@/*": ["src/*"]
 		}
 	},
+	"include": ["src", "test3.ts", "pretty-js-log.d.ts", "vite.config.ts"],
 	"exclude": ["node_modules"]
 }

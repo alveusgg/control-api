@@ -47,7 +47,7 @@ src/
     └── error_codes.ts         # Error code enumeration
 
 configs/
-├── cameras.json               # Camera definitions (address, capabilities)
+├── cameras.json               # Camera definitions (host, capabilities)
 └── test.json                  # Additional config files
 
 .env                           # Camera credentials (CAMERENAME_USERNAME, CAMERENAME_PASSWORD)
@@ -97,7 +97,7 @@ Edit `configs/cameras.json`:
 {
 	"camera_name": {
 		"name": "camera_name",
-		"address": "192.168.1.100",
+		"host": "192.168.1.100",
 		"capabilities": ["PTZ", "IrCutFilter"]
 	}
 }
@@ -242,7 +242,7 @@ const ActionHandler: Handler = {
 			let action = actionAdapter.parse(await ctx.req.json());
 			let camera = ctx.get(constants.targetCameraKey);
 
-			let url = VAPIXManager.URLBuilder("api_name", camera.address, {
+			let url = VAPIXManager.URLBuilder("api_name", camera.host, {
 				param: action.param,
 			});
 			let response = await VAPIXManager.makeAPICall(url, camera.login);
@@ -329,6 +329,6 @@ The server communicates with Axis cameras using the VAPIX API:
 ## Notes
 
 - The server currently has a test mode flag in `VAPIXManager.makeAPICall()` (defaults to true)
-- Camera addresses in config should be IP addresses without protocol
+- Camera hosts in config should be IP hosts without protocol
 - All camera names are case-sensitive in headers but converted to uppercase for environment variables
 - The server uses `btoa()` for Base64 encoding credentials (browser API available in Node.js)

@@ -3,7 +3,7 @@ import { constants as http } from "http2";
 
 import { ErrorCode } from "@/errors/error_codes";
 import * as constants from "@/constants";
-import type { Camera } from "@/models/camera";
+import type { Camera } from "@/models";
 import { APIErrorResponse } from "@/utils";
 
 const CapabilitiesMiddleware = (...capabilitiesList: string[]) => {

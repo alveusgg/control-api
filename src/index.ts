@@ -4,7 +4,7 @@ import { modules } from "@/modules/module";
 import Server from "@/server/server";
 
 async function main(): Promise<void> {
-	let server = new Server(3000);
+	let server = new Server(3000, 3001);
 
 	await server.initializeManagers();
 

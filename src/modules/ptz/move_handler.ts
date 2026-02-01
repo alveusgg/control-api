@@ -44,7 +44,7 @@ const MoveHandler: Handler = {
 				);
 			}
 
-			let url = VAPIXManager.URLBuilder("com/ptz", camera.address, {
+			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
 				move: move.direction,
 			});
 

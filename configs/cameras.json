@@ -1,7 +1,21 @@
-{
-	"pasture": {
+[
+	{
 		"name": "pushpopoutdoor",
-		"address": "192.168.100.106",
-		"capabilities": ["PTZ", "IrCutFilter"]
+		"host": "pushpop.cam",
+		"capabilities": ["PTZ", "IrCutFilter"],
+		"topics": [
+			"tns1:PTZController/tnsaxis:Move//.",
+			"tns1:Device/tnsaxis:Monitor/Heartbeat//.",
+			"tns1:VideoSource/tnsaxis:DayNightVision//."
+		]
+	},
+	{
+		"name": "hank",
+		"host": "hankptz.cam",
+		"capabilities": ["PTZ"],
+		"topics": [
+			"tns1:PTZController/tnsaxis:Move//.",
+			"tns1:Device/tnsaxis:Monitor/Heartbeat//."
+		]
 	}
-}
+]
