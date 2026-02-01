@@ -1,14 +1,413 @@
 [
 	{
+		"name": "garden",
+		"host": "garden.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
 		"name": "pushpopoutdoor",
 		"host": "pushpop.cam",
-		"capabilities": ["PTZ", "IrCutFilter"],
-		"topics": ["ptz", "heartbeat", "ir"]
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter",
+			"IrLight"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+		{
+		"name": "pushpopindoor",
+		"host": "pushpopindoor.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+		{
+		"name": "pushpopcrunch",
+		"host": "pushpopcrunch.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
 	},
 	{
 		"name": "hank",
 		"host": "hankptz.cam",
-		"capabilities": ["PTZ"],
-		"topics": ["ptz", "heartbeat"]
+		"capabilities": [
+			"PTZ"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat"
+		]
+	},
+		{
+		"name": "marmosetindoor",
+		"host": "marmosetindoor.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+		{
+		"name": "marmosetoutdoor",
+		"host": "marmoset.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "crowoutdoor",
+		"host": "crow.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": []
+	},
+	{
+		"name": "crowindoor",
+		"host": "crowindoor.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": []
+	},
+	{
+		"name": "georgie",
+		"host": "georgie.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "georgiewater",
+		"host": "georgiewater.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "patchy",
+		"host": "patchy.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "toast",
+		"host": "toast.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "toastcrunch",
+		"host": "toastcrunch.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "noodle",
+		"host": "noodle.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": []
+	},
+	{
+		"name": "tarantulawall",
+		"host": "tarantula.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": []
+	},
+	{
+		"name": "tarantula",
+		"host": "tarantulaptz.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "marty",
+		"host": "marty.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "bb",
+		"host": "spanishisopod.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "chickenoutdoor",
+		"host": "chicken.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "chickenindoor",
+		"host": "chickenindoor.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": []
+	},
+	{
+		"name": "wolf",
+		"host": "wolf.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "wolfcorner",
+		"host": "wolfcorner.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "wolfindoor",
+		"host": "wolfindoor.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "wolfswitch",
+		"host": "wolfswitch.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": []
+	},
+	{
+		"name": "wolfden",
+		"host": "wolfden.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": []
+	},
+	{
+		"name": "wolfden2",
+		"host": "wolfden2.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "pasture",
+		"host": "pasture.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "pasturefeeder",
+		"host": "pasturefeeder.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "emu",
+		"host": "emu.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "parrot",
+		"host": "parrot.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "macaws",
+		"host": "macaw.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "fox",
+		"host": "fox.cam",
+		"capabilities": [
+			"PTZ", 
+			"IrCutFilter"
+		],
+		"topics": [
+			"ptz", 
+			"heartbeat", 
+			"ir"
+		]
+	},
+	{
+		"name": "chins",
+		"host": "chin.cam",
+		"capabilities": [
+			"IrCutFilter"
+		],
+		"topics": [
+			"heartbeat", 
+			"ir"
+		]
 	}
 ]

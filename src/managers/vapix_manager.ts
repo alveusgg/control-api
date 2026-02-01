@@ -7,10 +7,18 @@ class VAPIXManager {
 		url: string,
 		client: DigestClient,
 		method: RequestInit["method"] = "GET",
+		body?: any,
 	): Promise<Response> {
 		try {
+			const hasBody = body !== undefined && body !== null;
 			const response = await client.fetch(url, {
 				method: method,
+				headers: hasBody
+					? {
+							"Content-Type": "application/json",
+						}
+					: undefined,
+				body: hasBody ? JSON.stringify(body) : undefined,
 			});
 			return response;
 		} catch (error) {
@@ -18,7 +26,7 @@ class VAPIXManager {
 		}
 	}
 
-	URLBuilder(api: string, target: string, URLParams: any): string {
+	URLBuilder(api: string, target: string, URLParams?: any): string {
 		const params = new URLSearchParams(
 			Object.assign(
 				{

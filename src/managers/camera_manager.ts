@@ -66,7 +66,9 @@ async function connectWebsocket(camera: Camera, topics: string[]) {
 			`http://${camera.host}/axis-cgi/wssession.cgi`,
 		);
 		if (!response.ok) {
-			throw new Error(`Failed to obtain session token: ${response.statusText}`);
+			throw new Error(
+				`${camera.name}: Failed to obtain session token: ${response.statusText}`,
+			);
 		}
 
 		const token = await response.text();
