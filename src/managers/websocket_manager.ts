@@ -21,8 +21,10 @@ class WebSocketManager {
 	}); // Gets immediately overwritten at runtime with the real server config
 
 	#observers: ObserversRegister;
+	#topicCache: Map<string, string>;
 
 	constructor() {
+		this.#topicCache = new Map<string, string>();
 		this.#observers = {
 			cameras: {},
 			topics: {},
@@ -74,9 +76,14 @@ class WebSocketManager {
 
 	processMessage(camera: Camera, message: RawMessage) {
 		// console.log(message)
-		const topic = mapTopicToFriendlyName(message.topic);
+		let topic = this.#topicCache.get(message.topic);
 		if (!topic) {
-			throw new Error("topic does not exist");
+			topic = mapTopicToFriendlyName(message.topic);
+			if (!topic) {
+				throw new Error("topic does not exist");
+			} else {
+				this.#topicCache.set(message.topic, topic);
+			}
 		}
 
 		const observerGroups = [

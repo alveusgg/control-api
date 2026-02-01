@@ -13,6 +13,14 @@ export const topicMap = new Map([
 	["tns1:Device/tnsaxis:Monitor/Heartbeat", "heartbeat"],
 ]);
 
+// Extremely lazy way to do this until I do something better
+// prettier-ignore
+export const reverseTopicMap = new Map([
+	["ptz", "tns1:PTZController/tnsaxis:Move"],
+	["ir", "tns1:VideoSource/tnsaxis:DayNightVision"],
+	["heartbeat", "tns1:Device/tnsaxis:Monitor/Heartbeat"],
+]);
+
 // Hono context variables
 export type Variables = {
 	[targetCameraKey]: Camera;

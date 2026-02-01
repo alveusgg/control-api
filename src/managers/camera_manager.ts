@@ -88,7 +88,7 @@ async function connectWebsocket(camera: Camera, topics: string[]) {
 
 			topics.forEach((t) => {
 				subscribeMessage.params.eventFilterList.push({
-					topicFilter: t,
+					topicFilter: constants.reverseTopicMap.get(t) + "//.",
 				});
 			});
 
