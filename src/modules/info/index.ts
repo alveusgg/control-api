@@ -5,6 +5,7 @@ import type { Module } from "@/modules/module";
 import { CameraMiddleware, CapabilitiesMiddleware } from "@/server/middleware";
 
 import GetInfoHandler from "./get_info_handler";
+import GetSpeedHandler from "./get_speed_handler";
 
 const InfoModule: Module = {
 	name: "Info",
@@ -19,6 +20,13 @@ const InfoModule: Module = {
 			"/position",
 			CapabilitiesMiddleware("PTZ"),
 			...GetInfoHandler.handle(),
+		);
+
+		infoModule.on(
+			"GET",
+			"/speed",
+			CapabilitiesMiddleware("PTZ"),
+			...GetSpeedHandler.handle(),
 		);
 
 		return infoModule;

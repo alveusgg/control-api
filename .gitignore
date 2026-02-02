@@ -34,3 +34,6 @@ lerna-debug.log*
 test3.ts
 pretty-js-log.d.ts
 capabilities.xml
+openapi.html
+openapi.pdf
+openapi.yaml
