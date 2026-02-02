@@ -11,10 +11,10 @@ import TiltHandler from "./tilt_handler";
 import ZoomHandler from "./zoom_handler";
 import AreazoomHandler from "./areazoom_handler";
 import SpinHandler from "./spin_handler";
-import RPTZHandler from "./rptz_handler";
-import RPanHandler from "./rpan_handler";
-import RTiltHandler from "./rtilt_handler";
-import RZoomHandler from "./rzoom_handler";
+import RPTZHandler from "./relative_ptz_handler";
+import RPanHandler from "./relative_pan_handler";
+import RTiltHandler from "./relative_tilt_handler";
+import RZoomHandler from "./relative_zoom_handler";
 
 const PTZModule: Module = {
 	name: "PTZ",

@@ -18,7 +18,10 @@
 		"capabilities": [
 			"PTZ", 
 			"IrCutFilter",
-			"IrLight"
+			"IrLight",
+			"Focus",
+			"Brightness",
+			"Iris"
 		],
 		"topics": [
 			"ptz", 
