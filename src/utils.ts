@@ -1,7 +1,6 @@
 import type { Context } from "hono";
 import { type StatusCode } from "hono/utils/http-status";
 
-import type { Position } from "@/models";
 import * as constants from "@/constants";
 
 interface APIError {
@@ -32,7 +31,7 @@ export function APIErrorResponse(
 	return ctx.json(newAPIError);
 }
 
-export function formatPosition(position: string): Position {
+export function formatPosition(position: string): Object {
 	let o: any = {};
 	position.split("\r\n").forEach((p) => {
 		let j = p.split("=");
@@ -41,7 +40,7 @@ export function formatPosition(position: string): Position {
 		}
 	});
 
-	return o as Position;
+	return o;
 }
 
 export function mapTopicToFriendlyName(topic: string): string | undefined {

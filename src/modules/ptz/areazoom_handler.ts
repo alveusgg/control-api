@@ -9,22 +9,19 @@ import { APIErrorResponse } from "@/utils";
 import { ErrorCode } from "@/errors/error_codes";
 
 // prettier-ignore
-const moveAdapter = z.object({
-	direction: z.enum([
-		"upleft",   "up",   "upright", 
-		"left",     "home", "right",
-		"downleft", "down", "downright",
-		"stop"
-	]),
+const areazoomAdapter = z.object({
+	x: z.number(),
+	y: z.number(),
+	z: z.number().min(1),
 });
 
-const MoveHandler: Handler = {
-	adapter: moveAdapter,
+const AreazoomHandler: Handler = {
+	adapter: areazoomAdapter,
 	handle: () => {
 		return createFactory<constants.Env>().createHandlers(async (ctx) => {
-			let move;
+			let areazoom;
 			try {
-				move = moveAdapter.parse(await ctx.req.json());
+				areazoom = areazoomAdapter.parse(await ctx.req.json());
 			} catch (error) {
 				return APIErrorResponse(
 					ctx,
@@ -44,8 +41,10 @@ const MoveHandler: Handler = {
 				);
 			}
 
+			let coordinates = [areazoom.x, areazoom.y, areazoom.z].join(",");
+
 			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
-				move: move.direction,
+				areazoom: coordinates,
 			});
 
 			let response;
@@ -74,4 +73,4 @@ const MoveHandler: Handler = {
 	},
 };
 
-export default MoveHandler;
+export default AreazoomHandler;

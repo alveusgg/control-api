@@ -9,6 +9,8 @@ import MoveHandler from "./move_handler";
 import PanHandler from "./pan_handler";
 import TiltHandler from "./tilt_handler";
 import ZoomHandler from "./zoom_handler";
+import AreazoomHandler from "./areazoom_handler";
+import SpinHandler from "./spin_handler";
 
 const PTZModule: Module = {
 	name: "PTZ",
@@ -51,6 +53,20 @@ const PTZModule: Module = {
 			"/zoom",
 			CapabilitiesMiddleware("PTZ"),
 			...ZoomHandler.handle(),
+		);
+
+		ptzModule.on(
+			"POST",
+			"/areazoom",
+			CapabilitiesMiddleware("PTZ"),
+			...AreazoomHandler.handle(),
+		);
+
+		ptzModule.on(
+			"POST",
+			"/spin",
+			CapabilitiesMiddleware("PTZ"),
+			...SpinHandler.handle(),
 		);
 
 		return ptzModule;

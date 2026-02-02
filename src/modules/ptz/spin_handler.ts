@@ -8,23 +8,19 @@ import { type Handler } from "@/modules/module";
 import { APIErrorResponse } from "@/utils";
 import { ErrorCode } from "@/errors/error_codes";
 
-// prettier-ignore
-const moveAdapter = z.object({
-	direction: z.enum([
-		"upleft",   "up",   "upright", 
-		"left",     "home", "right",
-		"downleft", "down", "downright",
-		"stop"
-	]),
+const spinAdapter = z.object({
+	pan: z.number().min(-100).and(z.number().max(100)),
+	tilt: z.number().min(-100).and(z.number().max(100)),
+	zoom: z.number().min(-100).and(z.number().max(100)),
 });
 
-const MoveHandler: Handler = {
-	adapter: moveAdapter,
+const SpinHandler: Handler = {
+	adapter: spinAdapter,
 	handle: () => {
 		return createFactory<constants.Env>().createHandlers(async (ctx) => {
-			let move;
+			let spin;
 			try {
-				move = moveAdapter.parse(await ctx.req.json());
+				spin = spinAdapter.parse(await ctx.req.json());
 			} catch (error) {
 				return APIErrorResponse(
 					ctx,
@@ -45,7 +41,8 @@ const MoveHandler: Handler = {
 			}
 
 			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
-				move: move.direction,
+				continuouspantiltmove: [spin.pan, spin.tilt].join(","),
+				continuouszoommove: spin.zoom,
 			});
 
 			let response;
@@ -74,4 +71,4 @@ const MoveHandler: Handler = {
 	},
 };
 
-export default MoveHandler;
+export default SpinHandler;

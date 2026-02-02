@@ -22,24 +22,27 @@ const PTZObserver: Observer = {
 			camera: camera.name,
 			timestamp: timestamp,
 			event: topic,
-			data: {
-				is_moving: true,
-			},
+			data: {},
 		};
 
-		let status = data.is_moving;
-		if (status == 0) {
-			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
-				query: "position",
-			});
+		let is_moving = false;
+		let query = "position";
 
-			let response = await VAPIXManager.makeAPICall(url, camera.client);
-			let position = formatPosition(await response.text());
-			msg.data = {
-				is_moving: false,
-				position,
-			};
+		if (data.is_moving == 1) {
+			query = "speed";
+			is_moving = true;
 		}
+
+		let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
+			query: query,
+		});
+
+		let response = await VAPIXManager.makeAPICall(url, camera.client);
+		let info = formatPosition(await response.text());
+		msg.data = {
+			is_moving: false,
+			info,
+		};
 
 		WebSocketManager.sendMessageToClients(msg);
 	},
