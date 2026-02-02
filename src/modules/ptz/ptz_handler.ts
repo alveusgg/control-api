@@ -13,14 +13,16 @@ const ptzAdapter = z
 		pan: z.number().min(-180.0).and(z.number().max(180.0)).optional(),
 		tilt: z.number().min(-180.0).and(z.number().max(180.0)).optional(),
 		zoom: z.number().min(1).and(z.number().max(19999)).optional(),
+		focus: z.number().min(1).and(z.number().max(19999)).optional(),
 	})
 	.refine(
 		(data) =>
-			data.pan !== undefined ||
-			data.tilt !== undefined ||
-			data.zoom !== undefined,
+			data.pan != undefined ||
+			data.tilt != undefined ||
+			data.zoom != undefined ||
+			data.focus != undefined,
 		{
-			message: "At least one of pan, tilt, or zoom must be provided",
+			message: "At least one of pan, tilt, zoom, or focus must be provided",
 		},
 	);
 
@@ -51,9 +53,10 @@ const PTZHandler: Handler = {
 			}
 
 			let url = VAPIXManager.URLBuilder("com/ptz", camera.host, {
-				...(ptz.pan !== undefined && { pan: ptz.pan }),
-				...(ptz.tilt !== undefined && { tilt: ptz.tilt }),
-				...(ptz.zoom !== undefined && { zoom: ptz.zoom }),
+				...(ptz.pan != undefined && { pan: ptz.pan }),
+				...(ptz.tilt != undefined && { tilt: ptz.tilt }),
+				...(ptz.zoom != undefined && { zoom: ptz.zoom }),
+				...(ptz.focus != undefined && { focus: ptz.focus }),
 			});
 
 			let response;
