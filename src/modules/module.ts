@@ -7,6 +7,7 @@ import * as constants from "@/constants";
 import DayNightModule from "./daynight";
 import PTZModule from "./ptz";
 import InfoModule from "./info";
+import ImagingModule from "./imaging";
 
 export interface Module {
 	name: string;
@@ -23,4 +24,9 @@ export interface Handler {
 }
 
 // Register modules to be loaded here
-export const modules: Module[] = [PTZModule, DayNightModule, InfoModule];
+export const modules: Module[] = [
+	PTZModule,
+	DayNightModule,
+	InfoModule,
+	ImagingModule,
+];

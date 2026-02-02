@@ -60,7 +60,3 @@ class Server {
 }
 
 export default Server;
-
-function sleep(time: any) {
-	return new Promise((resolve) => setTimeout(resolve, time));
-}
