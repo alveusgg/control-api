@@ -94,14 +94,14 @@ const ImagingModule: Module = {
 		imagingModule.on(
 			"POST",
 			"/cbrightness",
-			CapabilitiesMiddleware("Brightness"),
+			CapabilitiesMiddleware("ContinuousBrightness"),
 			...CBrightnessHandler.handle(),
 		);
 
 		imagingModule.on(
 			"POST",
 			"/ciris",
-			CapabilitiesMiddleware("Iris"),
+			CapabilitiesMiddleware("ContinuousIris"),
 			...CIrisHandler.handle(),
 		);
 

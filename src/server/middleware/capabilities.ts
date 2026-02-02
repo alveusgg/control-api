@@ -30,7 +30,7 @@ const CapabilitiesMiddleware = (...capabilitiesList: string[]) => {
 				http.HTTP_STATUS_BAD_REQUEST,
 				ErrorCode.UnsupportedActionCode,
 				new Error(
-					`Actions not supported on camera: ${Array.from(unsupportedCapabilities).join(", ")}`,
+					`Action(s) not supported on camera: ${Array.from(unsupportedCapabilities).join(", ")}`,
 				),
 			);
 		}
