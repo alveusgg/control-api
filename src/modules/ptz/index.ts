@@ -26,7 +26,14 @@ const PTZModule: Module = {
 
 		ptzModule.on(
 			"POST",
-			"",
+			"/",
+			CapabilitiesMiddleware("PTZ"),
+			...PTZHandler.handle(),
+		);
+
+		ptzModule.on(
+			"POST",
+			"/load",
 			CapabilitiesMiddleware("PTZ"),
 			...PTZHandler.handle(),
 		);
