@@ -8,6 +8,7 @@ import DayNightModule from "./daynight";
 import PTZModule from "./ptz";
 import InfoModule from "./info";
 import ImagingModule from "./imaging";
+import SettingsModule from "./settings";
 
 export interface Module {
 	name: string;
@@ -20,7 +21,7 @@ export interface Module {
 
 export interface Handler {
 	adapter?: ZodObject;
-	handle: () => HonoHandler[];
+	handle: (props?: any) => HonoHandler[];
 }
 
 // Register modules to be loaded here
@@ -29,4 +30,5 @@ export const modules: Module[] = [
 	DayNightModule,
 	InfoModule,
 	ImagingModule,
+	SettingsModule,
 ];

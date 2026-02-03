@@ -272,7 +272,8 @@
 		"host": "wolfcorner.cam",
 		"capabilities": [
 			"PTZ", 
-			"IrCutFilter"
+			"IrCutFilter",
+			"QuickZoom"
 		],
 		"topics": [
 			"ptz", 

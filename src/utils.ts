@@ -36,7 +36,8 @@ export function formatPosition(position: string): Object {
 	position.split("\r\n").forEach((p) => {
 		let j = p.split("=");
 		if (j[0] != "") {
-			o[j[0]] = !Number.isNaN(Number(j[1])) ? Number(j[1]) : j[1];
+			let v = j[1].trim();
+			o[j[0]] = !Number.isNaN(Number(v)) ? Number(v) : v;
 		}
 	});
 
