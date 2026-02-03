@@ -5,4 +5,5 @@ export const ErrorCode = {
 	UnknownCameraCode: 4,
 	InvalidRequestBodyCode: 5,
 	VAPIXCallFailed: 6,
+	AuthorizationFailed: 7,
 } as const;

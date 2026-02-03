@@ -4,6 +4,7 @@ import { serve } from "@hono/node-server";
 import * as constants from "@/constants";
 import * as managers from "@/managers";
 import type { Module } from "@/modules/module";
+import AuthorizationMiddleware from "@/server/middleware/authorization";
 
 interface ServiceConfig {
 	port: number;
@@ -12,9 +13,7 @@ interface ServiceConfig {
 
 class Server {
 	// public
-	readonly app: Hono<{ Variables: constants.Variables }> = new Hono<{
-		Variables: constants.Variables;
-	}>();
+	readonly app: Hono<{ Variables: constants.Variables }>;
 
 	// private
 	readonly #serverPort: number;
@@ -24,6 +23,17 @@ class Server {
 	constructor(serverPort: number, websocketPort: number) {
 		this.#serverPort = serverPort;
 		this.#websocketPort = websocketPort;
+
+		this.app = new Hono<{
+			Variables: constants.Variables;
+		}>();
+
+		let sharedKey = process.env[constants.sharedKeyKey];
+		if (!sharedKey) {
+			throw new Error("sharedKey not found in environment");
+		}
+
+		this.app.use(AuthorizationMiddleware(sharedKey));
 	}
 
 	registerModule(module: Module) {

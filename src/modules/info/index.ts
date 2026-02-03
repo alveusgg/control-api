@@ -33,7 +33,7 @@ const InfoModule: Module = {
 		infoModule.on(
 			"GET",
 			"/screenshot",
-			CapabilitiesMiddleware("Screenshot"),
+			CapabilitiesMiddleware("Screenshots"),
 			...GetScreenshotHandler.handle(),
 		);
 

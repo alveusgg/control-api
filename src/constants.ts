@@ -5,6 +5,7 @@ export const targetCameraKey = "targetCamera";
 export const CameraConfigKey = "cameras";
 
 export const allCameraTopicKey = "all";
+export const sharedKeyKey = "SHARED_KEY";
 
 // prettier-ignore
 export const topicMap = new Map([
