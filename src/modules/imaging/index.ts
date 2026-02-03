@@ -11,7 +11,7 @@ import RFocusHandler from "./relative_focus_handler";
 import RBrightnessHandler from "./relative_brightness_handler";
 import IRrisHandler from "./relative_iris_handler";
 import AutofocusHandler from "./autofocus_handler";
-import AutoirisHandler from "./autobrightness_handler";
+import AutoirisHandler from "./autoiris_handler";
 import CFocusHandler from "./continuous_focus_handler";
 import CBrightnessHandler from "./continuous_brightness_handler";
 import CIrisHandler from "./continuous_iris_handler";
