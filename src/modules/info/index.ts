@@ -6,6 +6,7 @@ import { CameraMiddleware, CapabilitiesMiddleware } from "@/server/middleware";
 
 import GetInfoHandler from "./get_info_handler";
 import GetSpeedHandler from "./get_speed_handler";
+import GetScreenshotHandler from "./get_screenshot_handler";
 
 const InfoModule: Module = {
 	name: "Info",
@@ -27,6 +28,13 @@ const InfoModule: Module = {
 			"/speed",
 			CapabilitiesMiddleware("PTZ"),
 			...GetSpeedHandler.handle(),
+		);
+
+		infoModule.on(
+			"GET",
+			"/screenshot",
+			CapabilitiesMiddleware("Screenshot"),
+			...GetScreenshotHandler.handle(),
 		);
 
 		return infoModule;

@@ -21,7 +21,8 @@
 			"IrLight",
 			"Focus",
 			"Brightness",
-			"Iris"
+			"Iris",
+			"Screenshot"
 		],
 		"topics": [
 			"ptz", 
@@ -330,7 +331,8 @@
 		"host": "pasture.cam",
 		"capabilities": [
 			"PTZ", 
-			"IrCutFilter"
+			"IrCutFilter",
+			"Screenshot"
 		],
 		"topics": [
 			"ptz", 
