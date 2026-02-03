@@ -40,7 +40,7 @@ const PTZObserver: Observer = {
 		let response = await VAPIXManager.makeAPICall(url, camera.client);
 		let info = formatPosition(await response.text());
 		msg.data = {
-			is_moving: false,
+			is_moving: is_moving,
 			info,
 		};
 
