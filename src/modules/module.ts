@@ -22,7 +22,7 @@ export interface Module {
 
 export interface Handler {
 	adapter?: ZodObject;
-	handle: (props?: any) => HonoHandler[];
+	handle: (props?: any) => [HonoHandler, ...HonoHandler[]];
 }
 
 // Register modules to be loaded here

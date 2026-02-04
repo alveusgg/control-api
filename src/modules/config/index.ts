@@ -2,7 +2,6 @@ import { Hono } from "hono";
 
 import * as constants from "@/constants";
 import type { Module } from "@/modules/module";
-import { CameraMiddleware, CapabilitiesMiddleware } from "@/server/middleware";
 
 import GetCapabilitiesHandler from "./get_capabilities_handler";
 
@@ -15,7 +14,6 @@ const ConfigModule: Module = {
 		configModule.on(
 			"GET",
 			"/capabilities/:camera",
-			CapabilitiesMiddleware(),
 			...GetCapabilitiesHandler.handle(),
 		);
 

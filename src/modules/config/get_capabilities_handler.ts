@@ -22,7 +22,7 @@ const GetCapabilitiesHandler: Handler = {
 				);
 			}
 
-			const camera = CameraManager.getCamera(cameraName.toLowerCase());
+			const camera = CameraManager.getCamera(cameraName);
 			if (!camera) {
 				return APIErrorResponse(
 					ctx,
