@@ -6,4 +6,5 @@ export const ErrorCode = {
 	InvalidRequestBodyCode: 5,
 	VAPIXCallFailed: 6,
 	AuthorizationFailed: 7,
+	MissingRequiredParameterCode: 8,
 } as const;

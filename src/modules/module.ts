@@ -9,6 +9,7 @@ import PTZModule from "./ptz";
 import InfoModule from "./info";
 import ImagingModule from "./imaging";
 import SettingsModule from "./settings";
+import ConfigModule from "./config";
 
 export interface Module {
 	name: string;
@@ -31,4 +32,5 @@ export const modules: Module[] = [
 	InfoModule,
 	ImagingModule,
 	SettingsModule,
+	ConfigModule,
 ];
