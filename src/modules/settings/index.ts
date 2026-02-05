@@ -91,20 +91,6 @@ const SettingsModule: Module = {
 		);
 
 		settingsModule.on(
-			"GET",
-			"/wdr",
-			CapabilitiesMiddleware("WideDynamicRange"),
-			...GetParameterHandler.handle("ImageSource.I0.Sensor.WDR"),
-		);
-
-		settingsModule.on(
-			"POST",
-			"/wdr",
-			CapabilitiesMiddleware("WideDynamicRange"),
-			...SetParameterHandler.handle("ImageSource.I0.Sensor.WDR"),
-		);
-
-		settingsModule.on(
 			"POST",
 			"/localcontrast",
 			CapabilitiesMiddleware("WideDynamicRange"),
