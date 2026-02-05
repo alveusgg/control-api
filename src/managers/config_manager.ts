@@ -26,12 +26,16 @@ class ConfigManager {
 		);
 	}
 
-	letCameraConfig(camera: string): any {
+	getCameraConfig(camera: string): any {
 		return this.#configs[constants.CameraConfigKey][camera];
 	}
 
 	getAllCameraConfigs(): any[] {
 		return this.#configs[constants.CameraConfigKey];
+	}
+
+	getServiceConfig(): any {
+		return this.#configs[constants.ServiceConfigKey];
 	}
 }
 

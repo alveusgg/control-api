@@ -427,7 +427,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"QuickZoom"
 		],
 		"topics": [
 			"ptz",

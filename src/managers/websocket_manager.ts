@@ -16,10 +16,7 @@ import { mapTopicToFriendlyName } from "@/utils";
 const observers: Observer[] = [PTZObserver, IRObserver];
 
 class WebSocketManager {
-	wss: InstanceType<typeof WebSocketServer> = new WebSocketServer({
-		port: 43278,
-	}); // Gets immediately overwritten at runtime with the real server config
-
+	wss!: WebSocketServer;
 	#observers: ObserversRegister;
 	#topicCache: Map<string, string>;
 

@@ -7,7 +7,8 @@ import type { Module } from "@/modules/module";
 import AuthorizationMiddleware from "@/server/middleware/authorization";
 
 interface ServiceConfig {
-	port: number;
+	serverPort: number;
+	websocketPort: number;
 	moduleMap: { [key: string]: boolean };
 }
 
@@ -16,14 +17,10 @@ class Server {
 	readonly app: Hono<{ Variables: constants.Variables }>;
 
 	// private
-	readonly #serverPort: number;
-	readonly #websocketPort: number;
+	#serviceConfig!: ServiceConfig;
 	#modules: { [key: string]: Module } = {};
 
-	constructor(serverPort: number, websocketPort: number) {
-		this.#serverPort = serverPort;
-		this.#websocketPort = websocketPort;
-
+	constructor() {
 		this.app = new Hono<{
 			Variables: constants.Variables;
 		}>();
@@ -37,8 +34,10 @@ class Server {
 	}
 
 	registerModule(module: Module) {
-		this.#modules[module.name] = module;
-		this.app.route(module.basePath, module.Initialize({}));
+		if (this.#serviceConfig.moduleMap[module.name]) {
+			this.#modules[module.name] = module;
+			this.app.route(module.basePath, module.Initialize({}));
+		}
 	}
 
 	async initializeManagers() {
@@ -53,14 +52,22 @@ class Server {
 			managers.CameraManager.loadCamera(v);
 		}
 
-		managers.WebSocketManager.setupWebsocket(this.#websocketPort);
+		// Service setup is also done here even though it's not a manager because manager initialization is the first thing that happens
+		let serviceConfig: ServiceConfig =
+			managers.ConfigManager.getServiceConfig();
+		if (!serviceConfig) {
+			throw new Error("Service config not found");
+		}
+
+		this.#serviceConfig = serviceConfig;
 	}
 
 	async startServer() {
+		managers.WebSocketManager.setupWebsocket(this.#serviceConfig.websocketPort);
 		serve(
 			{
 				fetch: this.app.fetch,
-				port: this.#serverPort,
+				port: this.#serviceConfig.serverPort,
 			},
 			(info) => {
 				console.log(`Server is running on http://localhost:${info.port}`);

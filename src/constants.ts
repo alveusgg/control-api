@@ -3,6 +3,7 @@ import type { Camera } from "@/models";
 export const cameraHeader = "X-Camera-Name";
 export const targetCameraKey = "targetCamera";
 export const CameraConfigKey = "cameras";
+export const ServiceConfigKey = "service";
 
 export const allCameraTopicKey = "all";
 export const sharedKeyKey = "SHARED_KEY";

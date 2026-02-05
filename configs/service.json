@@ -1,0 +1,12 @@
+{
+	"serverPort": 1229,
+	"websocketPort": 3130,
+	"moduleMap": { 
+		"Config": true,
+		"DayNight": true,
+		"Imaging": true,
+		"Info": true,
+		"PTZ": true,
+		"Settings": true
+	}
+}
