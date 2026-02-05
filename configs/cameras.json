@@ -23,7 +23,9 @@
 			"IrLight",
 			"Focus",
 			"Brightness",
-			"Iris"
+			"Iris",
+			"Appearance",
+			"WideDynamicRange"
 		],
 		"topics": [
 			"ptz",

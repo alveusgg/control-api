@@ -85,11 +85,11 @@ class VAPIXManager {
 		ctx: Context<constants.Env>,
 		target: Camera,
 		param: string,
-		enabled: boolean,
+		value: any,
 	): Promise<Response> {
 		let url = this.URLBuilder("param", target.host, {
 			action: "update",
-			[param]: enabled,
+			[param]: value,
 		});
 
 		let response;
