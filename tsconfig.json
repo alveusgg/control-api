@@ -9,14 +9,12 @@
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
 		"types": ["node"],
-		"jsx": "react-jsx",
-		"jsxImportSource": "hono/jsx",
 		"outDir": "./dist",
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
 		}
 	},
-	"include": ["src", "test3.ts", "pretty-js-log.d.ts", "vite.config.ts"],
+	"include": ["src"],
 	"exclude": ["node_modules"]
 }
