@@ -17,8 +17,7 @@
 	"scripts": {
 		"prepare": "husky",
 		"dev": "tsx watch src/index.ts",
-		"build": "vite build",
-		"start": "node dist/index.js"
+		"start": "tsx src/index.ts"
 	},
 	"dependencies": {
 		"@hono/node-server": "^1.19.6",
@@ -26,6 +25,7 @@
 		"dotenv": "^17.2.3",
 		"hono": "^4.10.7",
 		"pretty-js-log": "^1.2.0",
+		"tsx": "^4.21.0",
 		"ws": "^8.19.0",
 		"zod": "^4.1.13"
 	},
@@ -35,7 +35,6 @@
 		"husky": "^9.1.7",
 		"lint-staged": "^16.2.7",
 		"prettier": "3.7.4",
-		"tsx": "^4.7.1",
 		"typescript": "^5.8.3"
 	}
 }
