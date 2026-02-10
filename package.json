@@ -24,7 +24,7 @@
 		"@hono/standard-validator": "^0.2.2",
 		"digest-fetch": "^3.1.1",
 		"dotenv": "^17.2.3",
-		"hono": "^4.10.7",
+		"hono": "^4.11.9",
 		"hono-openapi": "^1.2.0",
 		"pretty-js-log": "^1.2.0",
 		"tsx": "^4.21.0",
