@@ -1,6 +1,10 @@
 {
 	"garden": {
 		"type": "Q6318-LE",
+		"maxResolution": {
+			"width": 3840,
+			"height": 2160
+		},
 		"hfov": {
 			"max": 58.5,
 			"min": 2.3
@@ -176,6 +180,10 @@
 	},
 	"pushpopoutdoor": {
 		"type": "P5676-LE",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 57.1,
 			"min": 2.1
@@ -347,6 +355,10 @@
 	},
 	"pushpopindoor": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -418,6 +430,10 @@
 	},
 	"pushpopcrunch": {
 		"type": "Q3536-LVE-9mm",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 103,
 			"min": 53
@@ -513,6 +529,10 @@
 	},
 	"hank": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -584,6 +604,10 @@
 	},
 	"marmosetindoor": {
 		"type": "P5676-LE",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 57.1,
 			"min": 2.1
@@ -755,6 +779,10 @@
 	},
 	"marmosetoutdoor": {
 		"type": "Q6318-LE",
+		"maxResolution": {
+			"width": 3840,
+			"height": 2160
+		},
 		"hfov": {
 			"max": 58.5,
 			"min": 2.3
@@ -930,6 +958,10 @@
 	},
 	"crowoutdoor": {
 		"type": "M5525-E",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 61.8,
 			"min": 6.7
@@ -1021,6 +1053,10 @@
 	},
 	"crowindoor": {
 		"type": "M5525-E",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 61.8,
 			"min": 6.7
@@ -1112,6 +1148,10 @@
 	},
 	"georgie": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -1183,6 +1223,10 @@
 	},
 	"georgiewater": {
 		"type": "P12-Mk-III",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 0,
 			"min": 0
@@ -1222,6 +1266,10 @@
 	},
 	"patchy": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -1293,6 +1341,10 @@
 	},
 	"toast": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -1364,6 +1416,10 @@
 	},
 	"toastcrunch": {
 		"type": "P12-Mk-III",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 0,
 			"min": 0
@@ -1403,6 +1459,10 @@
 	},
 	"noodle": {
 		"type": "M5525-E",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 61.8,
 			"min": 6.7
@@ -1494,6 +1554,10 @@
 	},
 	"tarantulawall": {
 		"type": "Q3617-VE",
+		"maxResolution": {
+			"width": 2720,
+			"height": 1536
+		},
 		"hfov": {
 			"max": 90,
 			"min": 41
@@ -1589,6 +1653,10 @@
 	},
 	"tarantula": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -1660,6 +1728,10 @@
 	},
 	"marty": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -1731,6 +1803,10 @@
 	},
 	"bb": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -1802,6 +1878,10 @@
 	},
 	"roaches": {
 		"type": "M5075-G",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 71,
 			"min": 14
@@ -1873,6 +1953,10 @@
 	},
 	"chickenoutdoor": {
 		"type": "P5676-LE",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 57.1,
 			"min": 2.1
@@ -2044,6 +2128,10 @@
 	},
 	"chickenindoor": {
 		"type": "M5525-E",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 61.8,
 			"min": 6.7
@@ -2135,6 +2223,10 @@
 	},
 	"wolf": {
 		"type": "Q6318-LE",
+		"maxResolution": {
+			"width": 3840,
+			"height": 2160
+		},
 		"hfov": {
 			"max": 58.5,
 			"min": 2.3
@@ -2310,6 +2402,10 @@
 	},
 	"wolfcorner": {
 		"type": "Q6318-LE",
+		"maxResolution": {
+			"width": 3840,
+			"height": 2160
+		},
 		"hfov": {
 			"max": 58.5,
 			"min": 2.3
@@ -2485,6 +2581,10 @@
 	},
 	"wolfindoor": {
 		"type": "P5676-LE",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 57.1,
 			"min": 2.1
@@ -2656,6 +2756,10 @@
 	},
 	"wolfswitch": {
 		"type": "Q6155-E",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 66.7,
 			"min": 2.36
@@ -2827,6 +2931,10 @@
 	},
 	"wolfden": {
 		"type": "P1435-LE",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 0,
 			"min": 0
@@ -2902,6 +3010,10 @@
 	},
 	"wolfden2": {
 		"type": "P1455-LE",
+		"maxResolution": {
+			"width": 1920,
+			"height": 1080
+		},
 		"hfov": {
 			"max": 114,
 			"min": 37
@@ -2977,6 +3089,10 @@
 	},
 	"pasture": {
 		"type": "Q6318-LE",
+		"maxResolution": {
+			"width": 3840,
+			"height": 2160
+		},
 		"hfov": {
 			"max": 58.5,
 			"min": 2.3
@@ -3152,6 +3268,10 @@
 	},
 	"pasturefeeder": {
 		"type": "Q3536-LVE-9mm",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 103,
 			"min": 53
@@ -3247,6 +3367,10 @@
 	},
 	"emu": {
 		"type": "P5676-LE",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 57.1,
 			"min": 2.1
@@ -3418,6 +3542,10 @@
 	},
 	"parrot": {
 		"type": "P5676-LE",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 57.1,
 			"min": 2.1
@@ -3589,6 +3717,10 @@
 	},
 	"macaws": {
 		"type": "P5676-LE",
+		"maxResolution": {
+			"width": 2688,
+			"height": 1512
+		},
 		"hfov": {
 			"max": 57.1,
 			"min": 2.1
@@ -3760,6 +3892,10 @@
 	},
 	"fox": {
 		"type": "Q6358-LE",
+		"maxResolution": {
+			"width": 3840,
+			"height": 2160
+		},
 		"hfov": {
 			"max": 58.5,
 			"min": 2.3

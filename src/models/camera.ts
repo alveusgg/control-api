@@ -2,6 +2,11 @@ import type DigestClient from "digest-fetch";
 import type { Preset } from "@/models/preset";
 import * as d3 from "d3-quadtree";
 
+interface Resolution {
+	width: number;
+	height: number;
+}
+
 interface MinMax {
 	min: number;
 	max: number;
@@ -9,6 +14,7 @@ interface MinMax {
 
 export interface Specs {
 	type: string;
+	maxResolution: Resolution;
 	hfov: MinMax;
 	vfov: MinMax;
 	focalLength: MinMax;
