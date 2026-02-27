@@ -134,9 +134,7 @@ export function searchQuadtree(
 			let leaf: d3.QuadtreeLeaf<Preset> | undefined = node;
 			do {
 				const d = leaf.data;
-				console.log("checking if");
 				if (d.pan >= xmin && d.pan < xmax && d.tilt >= ymin && d.tilt < ymax) {
-					console.log("pushing");
 					results.push(degreesToPixels(fov, d));
 				}
 			} while ((leaf = leaf.next));
@@ -145,6 +143,5 @@ export function searchQuadtree(
 		return x1 >= xmax || y1 >= ymax || x2 < xmin || y2 < ymin;
 	});
 
-	console.log(results);
 	return results;
 }
