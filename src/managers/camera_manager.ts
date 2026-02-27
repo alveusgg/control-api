@@ -1,9 +1,11 @@
 import DigestClient from "digest-fetch";
 import WebSocket from "ws";
+import * as d3 from "d3-quadtree";
 
 import type { Camera, Specs } from "@/models";
 import * as constants from "@/constants";
 import { WebSocketManager } from "@/managers";
+import type { Preset } from "@/models/preset";
 
 const usernameKey = "_USERNAME";
 const passwordKey = "_PASSWORD";
@@ -22,7 +24,7 @@ class CameraManager {
 		this.#cameras = {};
 	}
 
-	loadCamera(newCamera: cameraConfig, specs: Specs): void {
+	loadCamera(newCamera: cameraConfig, specs: Specs, presets: Preset[]): void {
 		let username = process.env[newCamera.name.toUpperCase() + usernameKey];
 		if (!username) {
 			console.log(`Unable to get username for ${newCamera.name} cam`);
@@ -35,12 +37,25 @@ class CameraManager {
 			return;
 		}
 
+		if (!presets) {
+			console.log(newCamera.name);
+		}
+
+		// console.log(presets);
+		let tree = d3
+			.quadtree<Preset>()
+			.x((p) => p.pan)
+			.y((p) => p.tilt)
+			.addAll(presets);
+		// console.log(tree.data());
+
 		let camera: Camera = {
 			name: newCamera.name,
 			host: newCamera.host,
 			client: new DigestClient(username, password),
 			capabilities: new Set(newCamera.capabilities),
 			specs: specs,
+			presets: tree,
 		};
 
 		this.#cameras[newCamera.name] = camera;

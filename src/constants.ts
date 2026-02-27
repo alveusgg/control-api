@@ -4,6 +4,7 @@ export const cameraHeader = "x-camera-name";
 export const targetCameraKey = "targetCamera";
 export const CameraConfigKey = "cameras";
 export const CameraSpecsKey = "specs";
+export const CameraPresetsKey = "presets";
 export const ServiceConfigKey = "service";
 
 export const allCameraTopicKey = "all";

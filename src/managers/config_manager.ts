@@ -2,6 +2,7 @@ import { readFile, readdir } from "fs/promises";
 import { join } from "node:path";
 
 import * as constants from "@/constants";
+import type { Preset } from "@/models";
 
 class ConfigManager {
 	// List functions that pull various configs
@@ -36,6 +37,10 @@ class ConfigManager {
 
 	getAllCameraSpecs(): any[] {
 		return this.#configs[constants.CameraSpecsKey];
+	}
+
+	getAllCameraPresets(): Preset[] {
+		return this.#configs[constants.CameraPresetsKey];
 	}
 
 	getServiceConfig(): any {

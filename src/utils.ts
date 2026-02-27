@@ -2,9 +2,10 @@ import type { Context } from "hono";
 import { type StatusCode } from "hono/utils/http-status";
 import * as z from "zod";
 import _ from "lodash";
+import * as d3 from "d3-quadtree";
 
 import * as constants from "@/constants";
-import type { Camera, FOV } from "./models";
+import type { Camera, FOV, Preset, PixelPreset } from "./models";
 
 interface APIError {
 	code: number;
@@ -88,6 +89,7 @@ export function getFOV(
 			let distance = zoom - step[1];
 			let multiplier = step[0] + _.round(distance / range, 2);
 			focalLength = camera.specs.focalLength.min * multiplier;
+			break;
 		}
 	}
 
@@ -106,4 +108,43 @@ export function getFOV(
 		x: _.round(pan - hFoV / 2, places),
 		y: _.round(tilt + vFoV / 2, places),
 	};
+}
+
+export function degreesToPixels(fov: FOV, preset: Preset): PixelPreset {
+	return {
+		name: preset.name,
+		x: Math.round((preset.pan - fov.x) * (1920 / fov.hFOV)),
+		y: Math.round((fov.y - preset.tilt) * (1080 / fov.vFOV)),
+	};
+}
+
+export function searchQuadtree(
+	quadtree: d3.Quadtree<Preset>,
+	fov: FOV,
+): PixelPreset[] {
+	const results: PixelPreset[] = [];
+
+	const xmin = fov.x;
+	const xmax = fov.x + fov.hFOV;
+	const ymax = fov.y;
+	const ymin = fov.y - fov.vFOV;
+
+	quadtree.visit((node, x1, y1, x2, y2) => {
+		if ("data" in node) {
+			let leaf: d3.QuadtreeLeaf<Preset> | undefined = node;
+			do {
+				const d = leaf.data;
+				console.log("checking if");
+				if (d.pan >= xmin && d.pan < xmax && d.tilt >= ymin && d.tilt < ymax) {
+					console.log("pushing");
+					results.push(degreesToPixels(fov, d));
+				}
+			} while ((leaf = leaf.next));
+		}
+
+		return x1 >= xmax || y1 >= ymax || x2 < xmin || y2 < ymin;
+	});
+
+	console.log(results);
+	return results;
 }

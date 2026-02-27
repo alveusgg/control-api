@@ -7,3 +7,4 @@ export type {
 } from "./observer";
 export type { Message, RawMessage } from "./websocket_message";
 export type { FOV } from "./fov.ts";
+export type { Preset, PixelPreset } from "./preset.ts";

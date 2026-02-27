@@ -1,4 +1,6 @@
 import type DigestClient from "digest-fetch";
+import type { Preset } from "@/models/preset";
+import * as d3 from "d3-quadtree";
 
 interface MinMax {
 	min: number;
@@ -23,4 +25,5 @@ export interface Camera {
 	client: DigestClient;
 	capabilities: Set<string>;
 	specs: Specs;
+	presets: d3.Quadtree<Preset>;
 }

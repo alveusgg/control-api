@@ -9,6 +9,7 @@ import {
 	formatQueryResponse,
 	PositionMapSchema,
 	getFOV,
+	searchQuadtree,
 } from "@/utils";
 import { ErrorCode } from "@/errors/error_codes";
 import * as errors from "@/errors/errors";
@@ -70,6 +71,7 @@ const GetInfoHandler: Handler = {
 
 			let info = formatQueryResponse(await response.text());
 			info.fov = getFOV(info.pan, info.tilt, info.zoom, camera);
+			info.presets = searchQuadtree(camera.presets, info.fov);
 
 			return ctx.json(info);
 		});
