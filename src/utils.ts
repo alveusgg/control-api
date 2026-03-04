@@ -76,30 +76,36 @@ export function getFOV(
 	zoom: number,
 	camera: Camera,
 ): FOV {
-	zoom = Math.max(1, Math.min(zoom, 9999));
-
-	let focalLength: number = camera.specs.focalLength.min;
 	const zoomSteps = camera.specs.zoomSteps;
+	const lastStep = zoomSteps[zoomSteps.length - 1];
+	zoom = Math.max(1, Math.min(zoom, lastStep[1]));
 
-	for (let i = 0; i < zoomSteps.length; i++) {
+	let multiplier = zoomSteps[0][0];
+	let found = false;
+
+	for (let i = zoomSteps.length - 1; i >= 0; i--) {
 		const step = zoomSteps[i];
-		const nextStep = zoomSteps[i + 1];
 		if (zoom >= step[1]) {
-			let range = nextStep[1] - step[1];
-			let distance = zoom - step[1];
-			let multiplier = step[0] + _.round(distance / range, 2);
-			focalLength = camera.specs.focalLength.min * multiplier;
+			if (i === zoomSteps.length - 1) {
+				multiplier = step[0];
+			} else {
+				const nextStep = zoomSteps[i + 1];
+				const range = nextStep[1] - step[1];
+				const distance = zoom - step[1];
+				const increment = nextStep[0] - step[0];
+				multiplier = step[0] + _.round((distance / range) * increment, 2);
+			}
+			found = true;
 			break;
 		}
 	}
 
+	const focalLength = camera.specs.focalLength.min * multiplier;
 	const sensorWidth = camera.specs.sensorWidth;
 	const sensorHeight = camera.specs.sensorHeight;
-
 	const hFoV = 2 * Math.atan(sensorWidth / (2 * focalLength)) * (180 / Math.PI);
 	const vFoV =
 		2 * Math.atan(sensorHeight / (2 * focalLength)) * (180 / Math.PI);
-
 	const places = 2;
 	return {
 		hFOV: _.round(hFoV, places),
