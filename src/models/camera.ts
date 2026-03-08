@@ -7,6 +7,11 @@ interface Resolution {
 	height: number;
 }
 
+interface Resolution {
+	width: number;
+	height: number;
+}
+
 interface MinMax {
 	min: number;
 	max: number;

@@ -113,6 +113,7 @@ export function getFOV(
 		focalLength: _.round(focalLength, places),
 		x: _.round(pan - hFoV / 2, places),
 		y: _.round(tilt + vFoV / 2, places),
+		multiplier: multiplier,
 	};
 }
 

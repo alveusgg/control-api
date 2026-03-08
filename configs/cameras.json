@@ -342,7 +342,11 @@
 			"Screenshots",
 			"IrCutFilter"
 		],
-		"topics": []
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
 	},
 	{
 		"name": "wolfden",
@@ -447,6 +451,20 @@
 			"IrCutFilter",
 			"QuickZoom",
 			"SpotFocus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
+		"name": "foxcovered",
+		"host": "foxcover.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter"
 		],
 		"topics": [
 			"ptz",

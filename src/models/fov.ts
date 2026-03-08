@@ -4,4 +4,5 @@ export interface FOV {
 	focalLength: number;
 	x: number;
 	y: number;
+	multiplier: number;
 }
