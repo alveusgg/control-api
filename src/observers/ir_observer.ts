@@ -1,5 +1,5 @@
 import type { Camera, Observer, Message } from "@/models";
-import { WebSocketManager } from "@/managers";
+import { OutboundBus } from "@/managers";
 
 const IRObserver: Observer = {
 	name: "ptz movement",
@@ -20,7 +20,7 @@ const IRObserver: Observer = {
 			},
 		};
 
-		WebSocketManager.sendMessageToClients(msg);
+		OutboundBus.broadcast(msg);
 	},
 };
 

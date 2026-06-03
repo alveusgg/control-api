@@ -2,3 +2,8 @@ export { default as ConfigManager } from "./config_manager";
 export { default as CameraManager } from "./camera_manager";
 export { default as VAPIXManager } from "./vapix_manager";
 export { default as WebSocketManager } from "./websocket_manager";
+export { default as OutboundBus } from "./outbound_bus";
+export { default as ObserverRegistry } from "./observer_registry";
+export { default as EventDispatcher } from "./event_dispatcher";
+export { default as WsServerTransport } from "./transports/ws_server_transport";
+export { default as TunnelTransport } from "./transports/tunnel_transport";

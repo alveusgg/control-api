@@ -1,5 +1,5 @@
 import type { Camera, Observer, Message } from "@/models";
-import { WebSocketManager, VAPIXManager } from "@/managers";
+import { OutboundBus, VAPIXManager } from "@/managers";
 import { formatQueryResponse, getFOV } from "@/utils";
 
 const PTZObserver: Observer = {
@@ -39,13 +39,13 @@ const PTZObserver: Observer = {
 				response = await VAPIXManager.makeAPICall(camera.client, url);
 			} catch (error) {
 				msg.data = error;
-				WebSocketManager.sendMessageToClients(msg);
+				OutboundBus.broadcast(msg);
 				return;
 			}
 
 			if (!response.ok) {
 				msg.data = await response.text();
-				WebSocketManager.sendMessageToClients(msg);
+				OutboundBus.broadcast(msg);
 				return;
 			}
 
@@ -60,13 +60,13 @@ const PTZObserver: Observer = {
 				response = await VAPIXManager.makeAPICall(camera.client, url);
 			} catch (error) {
 				msg.data = error;
-				WebSocketManager.sendMessageToClients(msg);
+				OutboundBus.broadcast(msg);
 				return;
 			}
 
 			if (!response.ok) {
 				msg.data = await response.text();
-				WebSocketManager.sendMessageToClients(msg);
+				OutboundBus.broadcast(msg);
 				return;
 			}
 
@@ -83,13 +83,13 @@ const PTZObserver: Observer = {
 				response = await VAPIXManager.makeAPICall(camera.client, url);
 			} catch (error) {
 				msg.data = error;
-				WebSocketManager.sendMessageToClients(msg);
+				OutboundBus.broadcast(msg);
 				return;
 			}
 
 			if (!response.ok) {
 				msg.data = await response.text();
-				WebSocketManager.sendMessageToClients(msg);
+				OutboundBus.broadcast(msg);
 				return;
 			}
 
@@ -104,7 +104,7 @@ const PTZObserver: Observer = {
 			info,
 		};
 
-		WebSocketManager.sendMessageToClients(msg);
+		OutboundBus.broadcast(msg);
 	},
 };
 

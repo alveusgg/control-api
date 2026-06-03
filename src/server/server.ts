@@ -1,5 +1,5 @@
-import { Hono } from "hono";
 import { serve } from "@hono/node-server";
+import { Hono } from "hono";
 
 import * as constants from "@/constants";
 import * as managers from "@/managers";
@@ -9,6 +9,7 @@ import { openAPIRouteHandler } from "hono-openapi";
 interface ServiceConfig {
 	serverPort: number;
 	websocketPort: number;
+	tunnelUrl?: string;
 	moduleMap: { [key: string]: boolean };
 }
 
@@ -74,7 +75,8 @@ class Server {
 	}
 
 	async startServer() {
-		managers.WebSocketManager.setupWebsocket(this.#serviceConfig.websocketPort);
+		managers.WsServerTransport.setup(this.#serviceConfig.websocketPort);
+		managers.WebSocketManager.bootstrap();
 		serve(
 			{
 				fetch: this.app.fetch,
@@ -84,6 +86,16 @@ class Server {
 				console.log(`Server is running on http://localhost:${info.port}`);
 			},
 		);
+	}
+
+	async startServerViaTunnel() {
+		if (!this.#serviceConfig.tunnelUrl) return;
+		managers.WebSocketManager.bootstrap();
+		await managers.TunnelTransport.setup(
+			this.#serviceConfig.tunnelUrl,
+			this.app,
+		);
+		console.log(`Tunnel server started on ${this.#serviceConfig.tunnelUrl}`);
 	}
 }
 

@@ -3,7 +3,7 @@ import WebSocket from "ws";
 
 import type { Camera, Specs } from "@/models";
 import * as constants from "@/constants";
-import { WebSocketManager } from "@/managers";
+import { EventDispatcher } from "@/managers";
 
 const usernameKey = "_USERNAME";
 const passwordKey = "_PASSWORD";
@@ -103,7 +103,7 @@ async function connectWebsocket(camera: Camera, topics: string[]) {
 			const message = JSON.parse(messageStr);
 
 			if (message.method === "events:notify") {
-				WebSocketManager.processMessage(camera, message.params.notification);
+				EventDispatcher.dispatch(camera, message.params.notification);
 			} else if (message.method === "events:configure") {
 				// Opt in or out of configuration status messages here
 				// console.log("Configured websocket:", JSON.stringify(message, null, 2));

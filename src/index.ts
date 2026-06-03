@@ -2,7 +2,6 @@ import "dotenv/config";
 
 import { modules } from "@/modules/module";
 import Server from "@/server/server";
-import { ConfigManager } from "./managers";
 
 async function main(): Promise<void> {
 	let server = new Server();
@@ -16,7 +15,8 @@ async function main(): Promise<void> {
 
 	// Once all the modules are registered, create the OpenAPI documentation
 	server.bootstrapOpenAPI();
-	server.startServer();
+	await server.startServer();
+	await server.startServerViaTunnel();
 }
 
 main();
