@@ -1,6 +1,7 @@
 {
 	"serverPort": 1229,
 	"websocketPort": 3130,
+	"tunnelUrl": "ws://localhost:1230",
 	"moduleMap": {
 		"Config": true,
 		"DayNight": true,

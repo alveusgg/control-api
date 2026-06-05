@@ -4,8 +4,15 @@
 		"host": "garden.cam",
 		"capabilities": [
 			"PTZ",
+			"SpotFocus",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"IrLight",
+			"Focus",
+			"Brightness",
+			"Iris",
+			"Appearance",
+			"WideDynamicRange"
 		],
 		"topics": [
 			"ptz",
@@ -25,7 +32,8 @@
 			"Brightness",
 			"Iris",
 			"Appearance",
-			"WideDynamicRange"
+			"WideDynamicRange",
+			"SpotFocus"
 		],
 		"topics": [
 			"ptz",
@@ -39,6 +47,7 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
+			"Focus",
 			"IrCutFilter"
 		],
 		"topics": [
@@ -53,7 +62,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -66,7 +76,8 @@
 		"host": "hankptz.cam",
 		"capabilities": [
 			"PTZ",
-			"Screenshots"
+			"Screenshots",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -79,7 +90,9 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus",
+			"SpotFocus"
 		],
 		"topics": [
 			"ptz",
@@ -93,7 +106,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -107,7 +121,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": []
 	},
@@ -117,7 +132,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": []
 	},
@@ -127,7 +143,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -141,7 +158,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -155,7 +173,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -169,7 +188,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -183,7 +203,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -197,7 +218,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": []
 	},
@@ -207,7 +229,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": []
 	},
@@ -217,7 +240,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -231,7 +255,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -245,7 +270,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -259,7 +285,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -273,7 +300,9 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus",
+			"SpotFocus"
 		],
 		"topics": [
 			"ptz",
@@ -287,7 +316,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": []
 	},
@@ -297,7 +327,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -312,7 +343,8 @@
 			"PTZ",
 			"Screenshots",
 			"IrCutFilter",
-			"QuickZoom"
+			"QuickZoom",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -326,7 +358,9 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus",
+			"SpotFocus"
 		],
 		"topics": [
 			"ptz",
@@ -340,7 +374,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -354,7 +389,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": []
 	},
@@ -364,7 +400,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -378,7 +415,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -392,7 +430,8 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -405,8 +444,46 @@
 		"host": "emu.cam",
 		"capabilities": [
 			"PTZ",
+			"SpotFocus",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"IrLight",
+			"Focus",
+			"Brightness",
+			"Iris",
+			"Appearance",
+			"WideDynamicRange"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
+		"name": "emucover",
+		"host": "emucover.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"Focus",
+			"SpotFocus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+		{
+		"name": "emupond",
+		"host": "emupond.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -420,7 +497,9 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus",
+			"SpotFocus"
 		],
 		"topics": [
 			"ptz",
@@ -434,7 +513,9 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus",
+			"SpotFocus"
 		],
 		"topics": [
 			"ptz",
@@ -450,7 +531,8 @@
 			"Screenshots",
 			"IrCutFilter",
 			"QuickZoom",
-			"SpotFocus"
+			"SpotFocus",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -464,7 +546,41 @@
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus",
+			"SpotFocus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+		{
+		"name": "foxindoor",
+		"host": "foxindoor.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"Focus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
+		"name": "serval",
+		"host": "serval.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"QuickZoom",
+			"SpotFocus",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
@@ -476,7 +592,8 @@
 		"name": "chins",
 		"host": "chin.cam",
 		"capabilities": [
-			"IrCutFilter"
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"heartbeat",
