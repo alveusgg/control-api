@@ -599,5 +599,26 @@
 			"heartbeat",
 			"ir"
 		]
+	},
+	{
+		"name": "nature",
+		"host": "nature.cam",
+		"capabilities": [
+			"PTZ",
+			"SpotFocus",
+			"Screenshots",
+			"IrCutFilter",
+			"IrLight",
+			"Focus",
+			"Brightness",
+			"Iris",
+			"Appearance",
+			"WideDynamicRange"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
 	}
 ]
