@@ -425,6 +425,21 @@
 		]
 	},
 	{
+		"name": "pasturelower",
+		"host": "pasturelower.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"Focus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
 		"name": "pasturefeeder",
 		"host": "pasturefeeder.cam",
 		"capabilities": [
