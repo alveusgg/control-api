@@ -9,7 +9,7 @@ updates:
 
     # Only accept updates that have been published for at least 3 days
     cooldown:
-      default-days: 3
+      default-days: 7
 
     # Create a grouped PR for minor/patch updates with majors getting dedicated PRs
     groups:
@@ -27,7 +27,7 @@ updates:
 
     # Only accept updates that have been published for at least 3 days
     cooldown:
-      default-days: 3
+      default-days: 7
 
     # Ensure the new version is stored in `package.json`
     versioning-strategy: increase
