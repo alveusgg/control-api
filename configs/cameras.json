@@ -7,12 +7,14 @@
 			"SpotFocus",
 			"Screenshots",
 			"IrCutFilter",
+			"QuickZoom",
 			"IrLight",
 			"Focus",
 			"Brightness",
 			"Iris",
 			"Appearance",
-			"WideDynamicRange"
+			"WideDynamicRange",
+			"AssistedFocus"
 		],
 		"topics": [
 			"ptz",
@@ -328,7 +330,8 @@
 			"PTZ",
 			"Screenshots",
 			"IrCutFilter",
-			"Focus"
+			"Focus",
+			"QuickZoom"
 		],
 		"topics": [
 			"ptz",
@@ -467,7 +470,9 @@
 			"Brightness",
 			"Iris",
 			"Appearance",
-			"WideDynamicRange"
+			"WideDynamicRange",
+			"AssistedFocus",
+			"QuickZoom"
 		],
 		"topics": [
 			"ptz",
@@ -547,7 +552,8 @@
 			"IrCutFilter",
 			"QuickZoom",
 			"SpotFocus",
-			"Focus"
+			"Focus",
+			"AssistedFocus"
 		],
 		"topics": [
 			"ptz",
@@ -595,7 +601,8 @@
 			"IrCutFilter",
 			"QuickZoom",
 			"SpotFocus",
-			"Focus"
+			"Focus",
+			"AssistedFocus"
 		],
 		"topics": [
 			"ptz",
@@ -628,7 +635,8 @@
 			"Brightness",
 			"Iris",
 			"Appearance",
-			"WideDynamicRange"
+			"WideDynamicRange",
+			"AssistedFocus"
 		],
 		"topics": [
 			"ptz",
