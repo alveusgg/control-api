@@ -109,6 +109,7 @@
 			"PTZ",
 			"Screenshots",
 			"IrCutFilter",
+			"QuickZoom",
 			"Focus"
 		],
 		"topics": [
@@ -419,6 +420,7 @@
 			"PTZ",
 			"Screenshots",
 			"IrCutFilter",
+			"QuickZoom",
 			"Focus"
 		],
 		"topics": [
@@ -434,6 +436,7 @@
 			"PTZ",
 			"Screenshots",
 			"IrCutFilter",
+			"QuickZoom",
 			"Focus"
 		],
 		"topics": [
@@ -630,6 +633,7 @@
 			"SpotFocus",
 			"Screenshots",
 			"IrCutFilter",
+			"QuickZoom",
 			"IrLight",
 			"Focus",
 			"Brightness",
