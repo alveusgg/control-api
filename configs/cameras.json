@@ -499,7 +499,7 @@
 			"ir"
 		]
 	},
-		{
+	{
 		"name": "emupond",
 		"host": "emupond.cam",
 		"capabilities": [
@@ -580,7 +580,7 @@
 			"ir"
 		]
 	},
-		{
+	{
 		"name": "foxindoor",
 		"host": "foxindoor.cam",
 		"capabilities": [
@@ -606,6 +606,27 @@
 			"SpotFocus",
 			"Focus",
 			"AssistedFocus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
+		"name": "servalindoor",
+		"host": "servalindoor.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"IrLight",
+			"Focus",
+			"Brightness",
+			"Iris",
+			"Appearance",
+			"WideDynamicRange",
+			"SpotFocus"
 		],
 		"topics": [
 			"ptz",
@@ -641,6 +662,21 @@
 			"Appearance",
 			"WideDynamicRange",
 			"AssistedFocus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
+		"name": "event",
+		"host": "event.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"Focus"
 		],
 		"topics": [
 			"ptz",
