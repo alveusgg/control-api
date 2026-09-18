@@ -49,7 +49,11 @@ export function formatQueryResponse(position: string): Record<string, any> {
 				let v = j[1].trim();
 				o[j[0].trim().replaceAll(" ", "_")] = !Number.isNaN(Number(v))
 					? Number(v)
-					: v;
+					: v === "true"
+						? true
+						: v === "false"
+							? false
+							: v;
 			}
 		});
 

@@ -11,6 +11,17 @@ import {
 import SetSpeedHandler from "./set_speed_handler";
 import GetSpeedHandler from "@/modules/info/get_speed_handler";
 import SetIntParameterHandler from "./int_parameter_handler";
+import SetEnumParameterHandler from "./enum_parameter_handler";
+
+// root.PTZ.UserAdv.U1.FocusAutoType. "assisted" lets the camera use its
+// zoom/focus curve to help find focus after a jump; "normal" does not, and quick
+// zoom does nothing at all on a camera set that way. Nearly every camera ships
+// assisted, which is why this went unnoticed until one didn't.
+//
+// Lowercase because that is what the camera reports and accepts; the parameter
+// is FocusAutoType, not AutoFocusType, despite reading as "Auto Focus Type" in
+// the web UI.
+const FOCUS_AUTO_TYPES = ["normal", "assisted"] as const;
 
 const SettingsModule: Module = {
 	name: "Settings",
@@ -34,6 +45,26 @@ const SettingsModule: Module = {
 			"/quickzoom",
 			CapabilitiesMiddleware("PTZ", "QuickZoom"),
 			...serveHandler(SetParameterHandler, "PTZ.UserAdv.U1.QuickZoom"),
+		);
+
+		RegisterRoute(
+			SettingsModule,
+			"GET",
+			"/focusautotype",
+			CapabilitiesMiddleware("PTZ", "Focus", "AssistedFocus"),
+			...serveHandler(GetParameterHandler, "PTZ.UserAdv.U1.FocusAutoType"),
+		);
+
+		RegisterRoute(
+			SettingsModule,
+			"POST",
+			"/focusautotype",
+			CapabilitiesMiddleware("PTZ", "Focus", "AssistedFocus"),
+			...serveHandler(
+				SetEnumParameterHandler,
+				"PTZ.UserAdv.U1.FocusAutoType",
+				FOCUS_AUTO_TYPES,
+			),
 		);
 
 		RegisterRoute(
