@@ -35,11 +35,11 @@
 	},
 	"devDependencies": {
 		"@types/lodash": "^4.17.24",
-		"@types/node": "^20.19.27",
+		"@types/node": "^20.19.43",
 		"@types/ws": "^8.18.1",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.2.7",
-		"prettier": "3.7.4",
+		"prettier": "3.9.6",
 		"typescript": "^5.8.3"
 	}
 }
