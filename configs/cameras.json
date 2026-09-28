@@ -614,6 +614,27 @@
 		]
 	},
 	{
+		"name": "servalcorner",
+		"host": "servalcorner.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"IrLight",
+			"Focus",
+			"Brightness",
+			"Iris",
+			"Appearance",
+			"WideDynamicRange",
+			"SpotFocus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
 		"name": "servalindoor",
 		"host": "servalindoor.cam",
 		"capabilities": [
@@ -662,21 +683,6 @@
 			"Appearance",
 			"WideDynamicRange",
 			"AssistedFocus"
-		],
-		"topics": [
-			"ptz",
-			"heartbeat",
-			"ir"
-		]
-	},
-	{
-		"name": "event",
-		"host": "event.cam",
-		"capabilities": [
-			"PTZ",
-			"Screenshots",
-			"IrCutFilter",
-			"Focus"
 		],
 		"topics": [
 			"ptz",

@@ -1,0 +1,22 @@
+[
+	{
+		"name": "serval",
+		"host": "serval.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"QuickZoom",
+			"SpotFocus",
+			"Focus",
+			"AssistedFocus"
+		],
+		"topics": ["ptz", "heartbeat", "ir"]
+	},
+	{
+		"name": "event",
+		"host": "event.cam",
+		"capabilities": ["PTZ", "Screenshots", "IrCutFilter", "Focus"],
+		"topics": ["ptz", "heartbeat", "ir"]
+	}
+]
