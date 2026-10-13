@@ -15,13 +15,16 @@ const areazoomAdapter = z.object({
 	x: z.number(),
 	y: z.number(),
 	z: z.number().min(1),
+	imagewidth: z.number().int().positive().optional(),
+	imageheight: z.number().int().positive().optional(),
 });
 
 const AreazoomHandler: Handler = {
 	openapi: describeRoute({
 		summary: "Areazoom",
 		tags: ["PTZ"],
-		description: "Zoom to an area defined by x, y, and z",
+		description:
+			"Zoom to an area defined by x, y, and z. x and y are pixel coordinates in an image of the camera's default size, unless imagewidth and imageheight give the size of the image they were taken from",
 		responses: {
 			200: {
 				description: "Successfully submitted to the camera",
@@ -51,9 +54,18 @@ const AreazoomHandler: Handler = {
 
 				let coordinates = [areazoom.x, areazoom.y, areazoom.z].join(",");
 
-				let url = VAPIXManager.URLBuilder(camera.host, "com/ptz", {
+				const params: Record<string, number | string> = {
 					areazoom: coordinates,
-				});
+				};
+
+				if (areazoom.imagewidth !== undefined) {
+					params.imagewidth = areazoom.imagewidth;
+				}
+				if (areazoom.imageheight !== undefined) {
+					params.imageheight = areazoom.imageheight;
+				}
+
+				let url = VAPIXManager.URLBuilder(camera.host, "com/ptz", params);
 
 				let response;
 				try {
