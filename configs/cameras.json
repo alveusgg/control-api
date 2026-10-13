@@ -74,8 +74,8 @@
 		]
 	},
 	{
-		"name": "hank",
-		"host": "hankptz.cam",
+		"name": "scorpion",
+		"host": "scorpion.cam",
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
@@ -566,7 +566,7 @@
 	},
 	{
 		"name": "foxcovered",
-		"host": "foxcover.cam",
+		"host": "foxcovered.cam",
 		"capabilities": [
 			"PTZ",
 			"Screenshots",
