@@ -1,4 +1,5 @@
 import { createFactory } from "hono/factory";
+import * as z from "zod";
 import { constants as http } from "http2";
 
 import * as constants from "@/constants";
@@ -7,13 +8,27 @@ import { type Handler } from "@/modules/module";
 import {
 	APIErrorResponse,
 	formatQueryResponse,
-	PositionMapSchema,
+	PositionValueSchema,
 	getFOV,
 } from "@/utils";
 import { ErrorCode } from "@/errors/error_codes";
 import * as errors from "@/errors/errors";
 
 import { describeRoute, resolver } from "hono-openapi";
+
+// The camera's position values, plus the field of view computed from them.
+const InfoResponseSchema = z
+	.object({
+		fov: z.object({
+			hFOV: z.number(),
+			vFOV: z.number(),
+			focalLength: z.number(),
+			x: z.number(),
+			y: z.number(),
+			multiplier: z.number(),
+		}),
+	})
+	.catchall(PositionValueSchema);
 
 const GetInfoHandler: Handler = {
 	openapi: describeRoute({
@@ -25,7 +40,7 @@ const GetInfoHandler: Handler = {
 				description: "Information about a camera",
 				content: {
 					"application/json": {
-						schema: resolver(PositionMapSchema),
+						schema: resolver(InfoResponseSchema),
 					},
 				},
 			},
