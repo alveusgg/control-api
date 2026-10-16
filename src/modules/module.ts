@@ -7,6 +7,8 @@ import {
 import * as constants from "@/constants";
 
 // Import modules
+import CapturesModule from "./captures";
+import PresetsModule from "./presets";
 import DayNightModule from "./daynight";
 import PTZModule from "./ptz";
 import InfoModule from "./info";
@@ -38,6 +40,8 @@ export const serveHandler = (
 
 // Register modules to be loaded here
 export const modules: Module[] = [
+	CapturesModule,
+	PresetsModule,
 	PTZModule,
 	DayNightModule,
 	InfoModule,

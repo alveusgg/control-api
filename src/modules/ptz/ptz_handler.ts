@@ -15,6 +15,7 @@ const ptzAdapter = z
 		pan: z.number().min(-180.0).and(z.number().max(180.0)).optional(),
 		tilt: z.number().min(-180.0).and(z.number().max(180.0)).optional(),
 		zoom: z.number().min(1).and(z.number().max(19999)).optional(),
+		autofocus: z.enum(["on", "off"]).optional(),
 		focus: z.number().min(1).and(z.number().max(19999)).optional(),
 	})
 	.refine(
@@ -22,9 +23,11 @@ const ptzAdapter = z
 			data.pan != undefined ||
 			data.tilt != undefined ||
 			data.zoom != undefined ||
-			data.focus != undefined,
+			data.focus != undefined ||
+			data.autofocus != undefined,
 		{
-			message: "At least one of pan, tilt, zoom, or focus must be provided",
+			message:
+				"At least one of pan, tilt, zoom, focus, or autofocus must be provided",
 		},
 	);
 
@@ -64,6 +67,7 @@ const PTZHandler: Handler = {
 					...(ptz.tilt != undefined && { tilt: ptz.tilt }),
 					...(ptz.zoom != undefined && { zoom: ptz.zoom }),
 					...(ptz.focus != undefined && { focus: ptz.focus }),
+					...(ptz.autofocus != undefined && { autofocus: ptz.autofocus }),
 				});
 
 				let response;
