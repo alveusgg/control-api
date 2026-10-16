@@ -35,3 +35,6 @@ test3.ts
 pretty-js-log.d.ts
 capabilities.xml
 openapi.*
+
+# Runtime capture bytes and delivery receipts
+data/captures/
