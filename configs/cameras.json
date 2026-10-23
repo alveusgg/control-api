@@ -596,6 +596,21 @@
 		]
 	},
 	{
+		"name": "fig",
+		"host": "fig.cam",
+		"capabilities": [
+			"PTZ",
+			"Screenshots",
+			"IrCutFilter",
+			"Focus"
+		],
+		"topics": [
+			"ptz",
+			"heartbeat",
+			"ir"
+		]
+	},
+	{
 		"name": "serval",
 		"host": "serval.cam",
 		"capabilities": [
