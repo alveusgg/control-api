@@ -1,3 +1,4 @@
+import { captureStore } from "@/modules/captures";
 import { serve } from "@hono/node-server";
 import { Hono } from "hono";
 
@@ -33,6 +34,7 @@ class Server {
 	}
 
 	async initializeManagers() {
+		await captureStore.initialize();
 		await managers.ConfigManager.loadAllConfigs();
 
 		let allCamConfigs: any[] = managers.ConfigManager.getAllCameraConfigs();

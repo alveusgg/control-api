@@ -16,11 +16,13 @@ class VAPIXManager {
 		url: string,
 		method: RequestInit["method"] = "GET",
 		body?: any,
+		signal?: AbortSignal,
 	): Promise<Response> {
 		try {
 			const hasBody = body !== undefined && body !== null;
 			const response = await client.fetch(url, {
 				method: method,
+				signal,
 				headers: hasBody
 					? {
 							"Content-Type": "application/json",
