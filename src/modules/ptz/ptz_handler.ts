@@ -14,7 +14,7 @@ const ptzAdapter = z
 	.object({
 		pan: z.number().min(-180.0).and(z.number().max(180.0)).optional(),
 		tilt: z.number().min(-180.0).and(z.number().max(180.0)).optional(),
-		zoom: z.number().min(1).and(z.number().max(19999)).optional(),
+		zoom: z.number().min(0).and(z.number().max(19999)).optional(),
 		focus: z.number().min(1).and(z.number().max(19999)).optional(),
 	})
 	.refine(

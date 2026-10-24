@@ -14,7 +14,7 @@ import { describeRoute, resolver, validator } from "hono-openapi";
 const areazoomAdapter = z.object({
 	x: z.number(),
 	y: z.number(),
-	z: z.number().min(1),
+	z: z.number().min(0),
 	imagewidth: z.number().int().positive().optional(),
 	imageheight: z.number().int().positive().optional(),
 });

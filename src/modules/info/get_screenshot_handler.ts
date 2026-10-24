@@ -13,6 +13,7 @@ import * as z from "zod";
 const screenshotAdapter = z.object({
 	width: z.coerce.number().int().positive().optional(),
 	height: z.coerce.number().int().positive().optional(),
+	compression: z.coerce.number().int().min(0).max(100).default(0),
 });
 
 const GetScreenshotHandler: Handler = {
@@ -45,10 +46,10 @@ const GetScreenshotHandler: Handler = {
 					);
 				}
 
-				const { width, height } = ctx.req.valid("query");
+				const { width, height, compression } = ctx.req.valid("query");
 
 				const params: Record<string, number | string> = {
-					compression: 0,
+					compression,
 				};
 
 				if (width !== undefined && height !== undefined) {
